@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Markdown-to-cloud",
+    "section": "",
+    "text": "Preface\nWelcome to the DevOps & Cloud Publishing Handbook. This digital text serves as a step-by-step documentation manual for setting up a modern, automated technical writing environment using Windows Subsystem for Linux (WSL), Quarto, and GitHub Pages.\nEach chapter builds sequentially on the last, providing complete code snippets and dedicated troubleshooting sections covering the exact edge-case failures you might encounter during the setup process.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "01-prereqs.html",
+    "href": "01-prereqs.html",
+    "title": "1  System Prerequisites",
+    "section": "",
+    "text": "1.1 Environment Architecture",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>System Prerequisites</span>"
+    ]
+  },
+  {
+    "objectID": "01-prereqs.html#environment-architecture",
+    "href": "01-prereqs.html#environment-architecture",
+    "title": "1  System Prerequisites",
+    "section": "",
+    "text": "OS: Windows 11 with WSL2 (Ubuntu 22.04 LTS or 24.04 LTS kernel).\nCLI Engine: Quarto Interactive CLI toolset.\nIDE Link: VS Code connected via the Remote - WSL extension.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>System Prerequisites</span>"
+    ]
+  },
+  {
+    "objectID": "01-prereqs.html#troubleshooting-gotchas",
+    "href": "01-prereqs.html#troubleshooting-gotchas",
+    "title": "1  System Prerequisites",
+    "section": "1.2 Troubleshooting & Gotchas",
+    "text": "1.2 Troubleshooting & Gotchas\n\n\n\n\n\n\nGotcha: Headless Browser Errors\n\n\n\nBecause WSL runs as a headless Linux server inside Windows, commands that attempt to automatically open web windows (like xdg-open) will fail with: xdg-open: no method available for opening 'http://localhost:7364/'\nThe Fix: The engine is running perfectly despite the message. Copy the local loopback string (http://localhost:7364/) manually, open your standard Windows browser (Chrome/Edge), and paste it into the address bar.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>System Prerequisites</span>"
+    ]
+  },
+  {
+    "objectID": "02-project-setup.html",
+    "href": "02-project-setup.html",
+    "title": "2  First-Time Book Project Setup",
+    "section": "",
+    "text": "2.1 Initialization Code\nTo stand up a pristine textbook scaffold inside your working directory, execute:\n```bash # Initialize a new Quarto book project skeleton quarto create project book my-textbook",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>First-Time Book Project Setup</span>"
+    ]
+  },
+  {
+    "objectID": "05-ongoing-management.html",
+    "href": "05-ongoing-management.html",
+    "title": "5  Long-Term Maintenance & Ongoing Management",
+    "section": "",
+    "text": "5.1 The Daily Writing Loop\nMental Model\nflowchart LR\n    A(\"Initialize Environment&lt;br&gt;(WSL Terminal)\") --&gt; B(\"Sync Local Workspace&lt;br&gt;(Pull from git)\")\n    B --&gt; C(\"Launch Preview&lt;br&gt;(local browser)\")\n    C --&gt; D(\"Add/Update Content&lt;br&gt;(update .qmd files)\")\n    D --&gt; E(\"Publish Updates&lt;br&gt;(Quarto Publish)\")\n    E --&gt; F(\"Secure Source Text&lt;br&gt;(Commit to git)\")\n\n\n\n\nFigure 5.1: Daily Writing and Publishing Workflow",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Long-Term Maintenance & Ongoing Management</span>"
+    ]
+  },
+  {
+    "objectID": "05-ongoing-management.html#the-daily-writing-loop",
+    "href": "05-ongoing-management.html#the-daily-writing-loop",
+    "title": "5  Long-Term Maintenance & Ongoing Management",
+    "section": "",
+    "text": "5.1.1 Step 1: Initialize Your Environment\nOpen your WSL terminal and change directories to your project folder:\ncd ~/my-textbook\n\n\n5.1.2 Step 2: Sync Your Local Workspace\nBefore making any edits, always pull the latest tracking tree from your remote repository to ensure you are building on top of your most recent cloud backup:\ngit pull origin main\n\n\n5.1.3 Step 3: Launch Your Live Editing Space\nOpen the current directory inside VS Code and spin up the local preview daemon. This allows you to view your changes in real-time in your browser as you type:\n# Open VS Code\ncode .\n\n# Spin up the local web engine\nquarto preview\nStep 4: Author Your Content Modify existing .qmd files or generate entirely new ones.\n\n\n\n\n\n\nImportant Structural Rule\n\n\n\nIf you add a brand new chapter file (e.g., 06-advanced-features.qmd), you must declare it inside your _quarto.yml file under the chapters: array. If it is omitted from the configuration mapping, Quarto will not compile it into the final book layout.\n\n\n\n\n5.1.4 Step 5: Publish Your Updates Live\nOnce your edits look perfect in your local browser preview, it is time to push them live. Halt the local preview engine and run the deployment engine:\nAction: Press Ctrl + C in your terminal to stop the preview\n# Build and push the static production pages to GitHub Pages\nquarto publish gh-pages\n\n\n5.1.5 Step 6: Secure Your Core Source Text\nWhile the production website is now live on GitHub Pages, your raw markdown source files are still only sitting on your local machine. Back up your core workspace changes back to your primary GitHub cloud tree:\ngit add .\ngit commit -m \"Updated content and structural revisions\"\ngit push origin main",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Long-Term Maintenance & Ongoing Management</span>"
+    ]
+  }
+]

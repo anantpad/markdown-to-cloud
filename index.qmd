@@ -1,0 +1,5 @@
+# Preface {.unnumbered}
+
+Welcome to the **DevOps & Cloud Publishing Handbook**. This digital text serves as a step-by-step documentation manual for setting up a modern, automated technical writing environment using Windows Subsystem for Linux (WSL), Quarto, and GitHub Pages.
+
+Each chapter builds sequentially on the last, providing complete code snippets and dedicated troubleshooting sections covering the exact edge-case failures you might encounter during the setup process.

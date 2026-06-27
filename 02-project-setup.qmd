@@ -1,0 +1,17 @@
+# First-Time Book Project Setup
+
+Initializing a technical textbook project creates a self-contained compilation ecosystem with specialized asset configuration profiles.
+
+## Initialization Code
+
+To stand up a pristine textbook scaffold inside your working directory, execute:
+
+```bash
+# Initialize a new Quarto book project skeleton
+quarto create project book my-textbook
+
+# Navigate into the project directory
+cd my-textbook
+
+# Initialize local workspace link to VS Code
+code .

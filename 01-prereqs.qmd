@@ -1,0 +1,18 @@
+# System Prerequisites
+
+Before launching a Quarto project, your local partition requires a Linux kernel layer running alongside your Windows host file system.
+
+## Environment Architecture
+* **OS:** Windows 11 with WSL2 (Ubuntu 22.04 LTS or 24.04 LTS kernel).
+* **CLI Engine:** Quarto Interactive CLI toolset.
+* **IDE Link:** VS Code connected via the Remote - WSL extension.
+
+## Troubleshooting & Gotchas
+
+::: {.callout-warning}
+## Gotcha: Headless Browser Errors
+Because WSL runs as a headless Linux server inside Windows, commands that attempt to automatically open web windows (like `xdg-open`) will fail with:
+`xdg-open: no method available for opening 'http://localhost:7364/'`
+
+**The Fix:** The engine is running perfectly despite the message. Copy the local loopback string (`http://localhost:7364/`) manually, open your standard Windows browser (Chrome/Edge), and paste it into the address bar.
+:::
