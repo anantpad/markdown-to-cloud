@@ -234,11 +234,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div aria-describedby="fig-quarto-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-quarto-workflow">flowchart LR
-    A("Initialize Environment&lt;br&gt;(WSL Terminal)") --&gt; B("Sync Local Workspace&lt;br&gt;(Pull from git)")
-    B --&gt; C("Launch Preview&lt;br&gt;(local browser)")
-    C --&gt; D("Add/Update Content&lt;br&gt;(update .qmd files)")
-    D --&gt; E("Publish Updates&lt;br&gt;(Quarto Publish)")
-    E --&gt; F("Secure Source Text&lt;br&gt;(Commit to git)")
+%% Define
+    A("Initialize Environment&lt;br&gt;(WSL Terminal)") --&gt; B("Sync Local Workspace&lt;br&gt;(Pull from git)") --&gt; C("Launch Preview&lt;br&gt;(local browser)")
+    C --&gt; D("Add/Update Content&lt;br&gt;(update .qmd files)") --&gt; E("Publish Updates&lt;br&gt;(Quarto Publish)") --&gt; F("Secure Source Text&lt;br&gt;(Commit to git)")
 </pre>
 </div>
 </div>

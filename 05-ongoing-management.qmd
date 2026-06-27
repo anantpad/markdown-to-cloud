@@ -12,11 +12,9 @@ Whenever you are ready to modify your content, follow this step-by-step develope
 %%| label: fig-quarto-workflow
 %%| fig-cap: "Daily Writing and Publishing Workflow"
 flowchart LR
-    A("Initialize Environment<br>(WSL Terminal)") --> B("Sync Local Workspace<br>(Pull from git)")
-    B --> C("Launch Preview<br>(local browser)")
-    C --> D("Add/Update Content<br>(update .qmd files)")
-    D --> E("Publish Updates<br>(Quarto Publish)")
-    E --> F("Secure Source Text<br>(Commit to git)")
+%% Define
+    A("Initialize Environment<br>(WSL Terminal)") --> B("Sync Local Workspace<br>(Pull from git)") --> C("Launch Preview<br>(local browser)")
+    C --> D("Add/Update Content<br>(update .qmd files)") --> E("Publish Updates<br>(Quarto Publish)") --> F("Secure Source Text<br>(Commit to git)")
 ```
 
 ### Step 1: Initialize Your Environment
