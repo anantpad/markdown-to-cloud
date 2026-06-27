@@ -54,7 +54,7 @@
     "href": "05-ongoing-management.html",
     "title": "5  Long-Term Maintenance & Ongoing Management",
     "section": "",
-    "text": "5.1 The Daily Writing Loop\nMental Model\nflowchart LR\n    A(\"Initialize Environment&lt;br&gt;(WSL Terminal)\") --&gt; B(\"Sync Local Workspace&lt;br&gt;(Pull from git)\")\n    B --&gt; C(\"Launch Preview&lt;br&gt;(local browser)\")\n    C --&gt; D(\"Add/Update Content&lt;br&gt;(update .qmd files)\")\n    D --&gt; E(\"Publish Updates&lt;br&gt;(Quarto Publish)\")\n    E --&gt; F(\"Secure Source Text&lt;br&gt;(Commit to git)\")\n\n\n\n\nFigure 5.1: Daily Writing and Publishing Workflow",
+    "text": "5.1 The Daily Writing Loop\nMental Model\nflowchart LR\n%% Define\n    A(\"Initialize Environment&lt;br&gt;(WSL Terminal)\") --&gt; B(\"Sync Local Workspace&lt;br&gt;(Pull from git)\") --&gt; C(\"Launch Preview&lt;br&gt;(local browser)\")\n    C --&gt; D(\"Add/Update Content&lt;br&gt;(update .qmd files)\") --&gt; E(\"Publish Updates&lt;br&gt;(Quarto Publish)\") --&gt; F(\"Secure Source Text&lt;br&gt;(Commit to git)\")\n\n\n\n\nFigure 5.1: Daily Writing and Publishing Workflow",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Long-Term Maintenance & Ongoing Management</span>"
     ]
