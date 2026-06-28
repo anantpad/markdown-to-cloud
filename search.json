@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Markdown-to-cloud",
+    "title": "Living Textbooks",
     "section": "",
-    "text": "Preface\nWelcome to the DevOps & Cloud Publishing Handbook. This digital text serves as a step-by-step documentation manual for setting up a modern, automated technical writing environment using Windows Subsystem for Linux (WSL), Quarto, and GitHub Pages.\nEach chapter builds sequentially on the last, providing complete code snippets and dedicated troubleshooting sections covering the exact edge-case failures you might encounter during the setup process.",
+    "text": "Preface\nWelcome to the world of Living Textbooks. I believe this is the biggest revolution shift in academic publishing. These are also known as open-access online textbooks. Instead of waiting five years for a publisher to print a costly “6th Edition” just to fix typos and update a few charts, authors now treat their textbooks like software: they update them continuously in real time, and students access them for free online.\nThis handbook is a guide that will help authors follow the exact modern workflow used by tech and science professors today.\nWith a living textbook, you as an author can update instantly while students are actively using it.",
     "crumbs": [
       "Preface"
     ]
@@ -12,61 +12,201 @@
   {
     "objectID": "01-prereqs.html",
     "href": "01-prereqs.html",
-    "title": "1  System Prerequisites",
+    "title": "2  System Prerequisites",
     "section": "",
-    "text": "1.1 Environment Architecture",
+    "text": "2.1 The “Living Textbook” Tech Stack\nTo make this work smoothly, you use three open-source tools together:\nBefore launching a Quarto project, your local partition requires a Linux kernel layer running alongside your Windows host file system.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>System Prerequisites</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>System Prerequisites</span>"
     ]
   },
   {
     "objectID": "01-prereqs.html#environment-architecture",
     "href": "01-prereqs.html#environment-architecture",
-    "title": "1  System Prerequisites",
-    "section": "",
-    "text": "OS: Windows 11 with WSL2 (Ubuntu 22.04 LTS or 24.04 LTS kernel).\nCLI Engine: Quarto Interactive CLI toolset.\nIDE Link: VS Code connected via the Remote - WSL extension.",
+    "title": "2  System Prerequisites",
+    "section": "2.2 Environment Architecture",
+    "text": "2.2 Environment Architecture\n\nOS: Windows 11 with WSL2 (Ubuntu 22.04 LTS or 24.04 LTS kernel). This is the closest to real Linux dev while keeping Windows usability. WSL (Windows Subsystem for Linux) is a feature in Windows that allows you to run a Linux distribution directly within Windows without needing a virtual machine or dual-boot setup. It provides a compatibility layer for executing Linux binaries natively on Windows.\nIDE: VS Code connected via the Remote - WSL extension.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>System Prerequisites</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>System Prerequisites</span>"
     ]
   },
   {
     "objectID": "01-prereqs.html#troubleshooting-gotchas",
     "href": "01-prereqs.html#troubleshooting-gotchas",
-    "title": "1  System Prerequisites",
-    "section": "1.2 Troubleshooting & Gotchas",
-    "text": "1.2 Troubleshooting & Gotchas\n\n\n\n\n\n\nGotcha: Headless Browser Errors\n\n\n\nBecause WSL runs as a headless Linux server inside Windows, commands that attempt to automatically open web windows (like xdg-open) will fail with: xdg-open: no method available for opening 'http://localhost:7364/'\nThe Fix: The engine is running perfectly despite the message. Copy the local loopback string (http://localhost:7364/) manually, open your standard Windows browser (Chrome/Edge), and paste it into the address bar.",
+    "title": "2  System Prerequisites",
+    "section": "2.5 Troubleshooting & Gotchas",
+    "text": "2.5 Troubleshooting & Gotchas\n\n\n\n\n\n\nWarningGotcha: Headless Browser Errors\n\n\n\nBecause WSL runs as a headless Linux server inside Windows, commands that attempt to automatically open web windows (like xdg-open) will fail with: xdg-open: no method available for opening 'http://localhost:xxxx/'\nThe Fix: The engine is running perfectly despite the message. Copy the local loopback string (http://localhost:xxxx/) manually, open your standard Windows browser (Chrome/Edge), and paste it into the address bar.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>System Prerequisites</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>System Prerequisites</span>"
     ]
   },
   {
     "objectID": "02-project-setup.html",
     "href": "02-project-setup.html",
-    "title": "2  First-Time Book Project Setup",
+    "title": "3  First-Time Book Project Setup",
     "section": "",
-    "text": "2.1 Initialization Code\nTo stand up a pristine textbook scaffold inside your working directory, execute:\n```bash # Initialize a new Quarto book project skeleton quarto create project book my-textbook",
+    "text": "3.1 Initialize the book structure\nIn this chapter, we will generate a pre-configured textbook template. Quarto makes creating a book incredibly easy because it has a built-in template that sets up the structure for you.\nMake sure you are in your desired directory inside WSL. Run the following commands. These commands will create the textook project right there.\nThis creates a new folder called my-textbook inside your selected directory with everything you need:\nOpen this new folder inside VS Code. You can write standard Markdown in these files, and insert any code by enclosing it in ```blocks (), and LaTeX math by enclosing it in $ blocks (e.g., \\(E = mc^2\\)).",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>First-Time Book Project Setup</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>First-Time Book Project Setup</span>"
     ]
   },
   {
     "objectID": "05-ongoing-management.html",
     "href": "05-ongoing-management.html",
-    "title": "5  Long-Term Maintenance & Ongoing Management",
+    "title": "6  Long-Term Maintenance & Ongoing Management",
     "section": "",
-    "text": "5.1 The Daily Writing Loop\nMental Model\nflowchart LR\n%% Define\n    A(\"Initialize Environment&lt;br&gt;(WSL Terminal)\") --&gt; B(\"Sync Local Workspace&lt;br&gt;(Pull from git)\") --&gt; C(\"Launch Preview&lt;br&gt;(local browser)\")\n    C --&gt; D(\"Add/Update Content&lt;br&gt;(update .qmd files)\") --&gt; E(\"Publish Updates&lt;br&gt;(Quarto Publish)\") --&gt; F(\"Secure Source Text&lt;br&gt;(Commit to git)\")\n\n\n\n\nFigure 5.1: Daily Writing and Publishing Workflow",
+    "text": "6.1 How the Continuous Update Workflow Works\nYour technical textbook is a living document. It will require updates, errata fixes, and new content periodically — if not daily.\nOnce you set this up, updating your textbook takes seconds. The workflow feels invisible:",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Long-Term Maintenance & Ongoing Management</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Long-Term Maintenance & Ongoing Management</span>"
     ]
   },
   {
     "objectID": "05-ongoing-management.html#the-daily-writing-loop",
     "href": "05-ongoing-management.html#the-daily-writing-loop",
-    "title": "5  Long-Term Maintenance & Ongoing Management",
-    "section": "",
-    "text": "5.1.1 Step 1: Initialize Your Environment\nOpen your WSL terminal and change directories to your project folder:\ncd ~/my-textbook\n\n\n5.1.2 Step 2: Sync Your Local Workspace\nBefore making any edits, always pull the latest tracking tree from your remote repository to ensure you are building on top of your most recent cloud backup:\ngit pull origin main\n\n\n5.1.3 Step 3: Launch Your Live Editing Space\nOpen the current directory inside VS Code and spin up the local preview daemon. This allows you to view your changes in real-time in your browser as you type:\n# Open VS Code\ncode .\n\n# Spin up the local web engine\nquarto preview\nStep 4: Author Your Content Modify existing .qmd files or generate entirely new ones.\n\n\n\n\n\n\nImportant Structural Rule\n\n\n\nIf you add a brand new chapter file (e.g., 06-advanced-features.qmd), you must declare it inside your _quarto.yml file under the chapters: array. If it is omitted from the configuration mapping, Quarto will not compile it into the final book layout.\n\n\n\n\n5.1.4 Step 5: Publish Your Updates Live\nOnce your edits look perfect in your local browser preview, it is time to push them live. Halt the local preview engine and run the deployment engine:\nAction: Press Ctrl + C in your terminal to stop the preview\n# Build and push the static production pages to GitHub Pages\nquarto publish gh-pages\n\n\n5.1.5 Step 6: Secure Your Core Source Text\nWhile the production website is now live on GitHub Pages, your raw markdown source files are still only sitting on your local machine. Back up your core workspace changes back to your primary GitHub cloud tree:\ngit add .\ngit commit -m \"Updated content and structural revisions\"\ngit push origin main",
+    "title": "6  Long-Term Maintenance & Ongoing Management",
+    "section": "6.3 The Daily Writing Loop",
+    "text": "6.3 The Daily Writing Loop\nMental Model\n%%| label: fig-quarto-workflow\n%%| fig-cap: \"Daily Writing and Publishing Workflow\"\nflowchart LR\n%% Define\n    A(\"Initialize Environment&lt;br&gt;(WSL Terminal)\") --&gt; B(\"Sync Local Workspace&lt;br&gt;(Pull from git)\") --&gt; C(\"Launch Preview&lt;br&gt;(local browser)\")\n    C --&gt; D(\"Add/Update Content&lt;br&gt;(update .qmd files)\") --&gt; E(\"Publish Updates&lt;br&gt;(Quarto Publish)\") --&gt; F(\"Secure Source Text&lt;br&gt;(Push to git)\")\nWhenever you are ready to modify your content, follow this step-by-step developer loop. ### Step 1: Initialize Your Environment Open your WSL terminal and change directories to your project folder:\ncd ~/my-textbook\n\n6.3.1 Step 2: Sync Your Local Workspace\nBefore making any edits, always pull the latest tracking tree from your remote repository to ensure you are building on top of your most recent cloud backup:\ngit pull origin main\n\n\n6.3.2 Step 3: Launch Your Live Editing Space\nOpen the current directory inside VS Code and spin up the local preview daemon. This allows you to view your changes in real-time in your browser as you type:\n# Open VS Code\ncode .\n\n# Spin up the local web engine\nquarto preview\nStep 4: Author Your Content Modify existing .qmd files or generate entirely new ones.\n\n\n\n\n\n\nNoteImportant Structural Rule\n\n\n\nIf you add a brand new chapter file (e.g., 06-advanced-features.qmd), you must declare it inside your _quarto.yml file under the chapters: array. If it is omitted from the configuration mapping, Quarto will not compile it into the final book layout.\n\n\n\n\n6.3.3 Step 5: Publish Your Updates Live\nOnce your edits look perfect in your local browser preview, it is time to push them live. Halt the local preview engine and run the deployment engine:\nAction: Press Ctrl + C in your terminal to stop the preview\n# Build and push the static production pages to GitHub Pages\nquarto publish gh-pages\n\n\n6.3.4 Step 6: Secure Your Core Source Text\nWhile the production website is now live on GitHub Pages, your raw markdown source files are still only sitting on your local machine. Back up your core workspace changes back to your primary GitHub cloud tree:\ngit add .\ngit commit -m \"Updated content and structural revisions\"\ngit push origin main",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Long-Term Maintenance & Ongoing Management</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Long-Term Maintenance & Ongoing Management</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#about-quarto",
+    "href": "index.html#about-quarto",
+    "title": "Living Textbooks",
+    "section": "About Quarto",
+    "text": "About Quarto\nQuarto is best for most authors, especially those including data, code, or math. Quarto is an open-source scientific and technical publishing system backed by Posit (formerly RStudio). It allows you to write in plain Markdown but handles complex LaTeX math perfectly under the hood. More on Quarto, click here Quarto\n\nHow it works:\n\nYou write individual chapters in Markdown (.qmd or .md).\nA simple configuration file (_quarto.yml) stitches them together into a beautiful textbook.\nOutputs can be PDF (via LaTeX), HTML/E-book, and MS Word from the exact same source files.\n\n\n\nWhy it’s easy:\n\nYou don’t need to know deep LaTeX formatting;\nQuarto handles cross-references (e.g., “See Figure 2.3”), citations, and indexing automatically.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "01-prereqs.html#the-living-textbook-tech-stack",
+    "href": "01-prereqs.html#the-living-textbook-tech-stack",
+    "title": "2  System Prerequisites",
+    "section": "",
+    "text": "The Writing Tool (Quarto or Bookdown): You write your textbook in simple Markdown.\n\nThe Code Repository (GitHub): You store your textbook files on GitHub.\nThe Web Host (GitHub Pages): A free service that takes your Markdown files and turns them into a public website for your students.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>System Prerequisites</span>"
+    ]
+  },
+  {
+    "objectID": "05-ongoing-management.html#how-the-continuous-update-workflow-works",
+    "href": "05-ongoing-management.html#how-the-continuous-update-workflow-works",
+    "title": "6  Long-Term Maintenance & Ongoing Management",
+    "section": "",
+    "text": "Fix a typo or add a section:In your local text editor.Open your Markdown chapter file on your computer. Make your edits, add a new LaTeX equation, or drop in a new code example.\nPush changes to GitHub:10 seconds.Save the file and “push” your update to your GitHub repository (just like saving code to the cloud).\nAutomatic background build: 1-2 minutes.An automated script (called a GitHub Action) triggers in the cloud. It automatically runs Quarto, reads your updated Markdown, updates the textbook’s table of contents, and recompiles the website.\nThe student’s view is instantly updated:Immediate. The next time a student refreshes the website on their phone or laptop, the new paragraph, fix, or assignment is right there.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Long-Term Maintenance & Ongoing Management</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#key-advantages-of-doing-this",
+    "href": "index.html#key-advantages-of-doing-this",
+    "title": "Living Textbooks",
+    "section": "Key Advantages of Doing This",
+    "text": "Key Advantages of Doing This\n\nCrowdsourced Errata: Many authors put a “Report a Typo” link at the bottom of every page that links directly to their GitHub. If a student spots a broken link or a misspelling, they can submit a fix, and the author can accept it with one click.\nInteractive Elements: Because it’s a website, authors can embed interactive Python/R code blocks, videos, or animations directly inside the text—things a paper textbook could never do.\n\nNo “Out of Stock” issues: Every student has access from day one, entirely for free.\n\nThis handbook serves as a step-by-step documentation manual for setting up a modern, automated technical writing environment using Windows Subsystem for Linux (WSL), Quarto, and GitHub Pages. Use Quarto to write, GitHub to store your files, and GitHub Pages to host the website. This handbook is divided into Chapters. Each chapter builds sequentially on the last, providing complete code snippets and dedicated troubleshooting sections covering the exact edge-case failures you might encounter during the setup process.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#key-advantages-of-a-living-textbook",
+    "href": "index.html#key-advantages-of-a-living-textbook",
+    "title": "Living Textbooks",
+    "section": "Key Advantages of a Living Textbook",
+    "text": "Key Advantages of a Living Textbook\n\nCrowdsourced Errata: Many authors put a “Report a Typo” link at the bottom of every page that links directly to their GitHub. If a student spots a broken link or a misspelling, they can submit a fix, and the author can accept it with one click.\nInteractive Elements: Because it’s a website, authors can embed interactive Python/R code blocks, videos, or animations directly inside the text—things a paper textbook could never do.\n\nNo “Out of Stock” issues: Every student has access from day one, entirely for free.\n\nThis handbook serves as a step-by-step documentation manual for setting up a modern, automated technical writing environment using Windows Subsystem for Linux (WSL), Quarto, and GitHub Pages.\nUse Quarto to write, GitHub to store your files, and GitHub Pages to host the website. This handbook is divided into Chapters. Each chapter builds sequentially on the last, providing complete code snippets and dedicated troubleshooting sections covering the exact edge-case failures you might encounter during the setup process.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "01-prereqs.html#download-tools",
+    "href": "01-prereqs.html#download-tools",
+    "title": "1  System Prerequisites",
+    "section": "1.3 Download tools",
+    "text": "1.3 Download tools",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>System Prerequisites</span>"
+    ]
+  },
+  {
+    "objectID": "01-prereqs.html#get-a-free-github-account",
+    "href": "01-prereqs.html#get-a-free-github-account",
+    "title": "2  System Prerequisites",
+    "section": "2.4 Get a free GitHub Account",
+    "text": "2.4 Get a free GitHub Account\n\nIf you don’t have one already, sign up at GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>System Prerequisites</span>"
+    ]
+  },
+  {
+    "objectID": "01-prereqs.html#download-quarto",
+    "href": "01-prereqs.html#download-quarto",
+    "title": "2  System Prerequisites",
+    "section": "2.3 Download Quarto",
+    "text": "2.3 Download Quarto\n\nQuarto like any software tool (similar to Python or Git) needs to be installed globally on your Ubuntu system so that it can be run from anywhere. On Ubuntu inside WSL, you can install Quarto via your terminal in just a few commands. In your terminal, run these three commands:\n\n# 1. Download the installer file to your system.\nwget https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.555/quarto-1.4.555-linux-amd64.deb\n# wget just downloads the temporary .deb installer file to whatever folder you are currently standing in\n\n# 2. Install it globally using Ubuntu's package manager. \nsudo apt install ./quarto-1.4.555-linux-amd64.deb\n# sudo apt install extracts that file and installs Quarto globally into Ubuntu's system folders (like /usr/local/bin)\n# Once the installation is complete, the quarto command becomes available everywhere across your entire WSL system.\n\n# 3. Make sure Quarto is alive and kicking\nquarto --version\n# It should return the version number. You can safely clean up the installer file using the next step\n\n# 3. Clean up and delete the installer file since you don't need it anymore\nrm quarto-1.4.555-linux-amd64.deb\n\n\n\n\n\n\nWarningPermission denied Errors\n\n\n\nYou may see a classic Ubuntu _apt permissions quirk! This is a very common side-effect when you download a file using wget and then try to hand it off to apt immediately. Because wget saved the file with permissions restricted to your personal user account, the system user named _apt isn’t allowed to read it to complete the installation.\nThe Fix: We can fix this instantly by granting _apt permission to read the file, or by using a slightly different command to install it.\n# Give everyone read permission for just this installer file\nchmod +x ./quarto-1.4.555-linux-amd64.deb\n\n# Run the install again using dpkg (which bypasses the _apt user restriction)\nsudo dpkg -i ./quarto-1.4.555-linux-amd64.deb\n\n# Fix any potential missing dependencies just in case\nsudo apt-get install -f\nThen continue with # 3 above\n\n\n\n\n\n\n\n\nTipKeeping Your System Up to Date\n\n\n\nIf you already have Quarto installed but need to jump to the latest release to leverage newer background compiling features, follow the step-by-step pipeline detailed in Appendix A: Upgrading Quarto.\n\n\n:::",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>System Prerequisites</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 About Quarto\nWriting a textbook is a massive undertaking, but choosing the right tooling can save you hundreds of hours of formatting headaches.\nI use VS Code on Windows via the Remote - WSL extension to write books in Markdown, and compile it using Quarto installation on Ubuntu WSL instance for local building, and push the source files to GitHub for version control and use GitHub Actions to automatically build, render and host my books on GitHub pages.\nThis technical handbook is an engineering manual that starts with assuming the technical environment, moves linearly through execution and wraps up with the lomg term management and updates - with dedicated troubleshooting sections - as applicable.\nQuarto is best for most authors, especially those including data, code, or math. Quarto is an open-source scientific and technical publishing system backed by Posit (formerly RStudio). It allows you to write in plain Markdown but handles complex LaTeX math perfectly under the hood. More on Quarto, click here Quarto",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "02-project-setup.html#initialize-the-book-structure",
+    "href": "02-project-setup.html#initialize-the-book-structure",
+    "title": "3  First-Time Book Project Setup",
+    "section": "",
+    "text": "# Initialize a new Quarto book project skeleton\nquarto create project book my-textbook\n\n# Navigate into the project directory\ncd my-textbook\n\n# Initialize local workspace link to VS Code\ncode .\n\n\n_quarto.yml: The main configuration file (the “brain” of your book).\nindex.qmd: Your textbook’s introduction page.\nintro.qmd, summary.qmd: Example chapters.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>First-Time Book Project Setup</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#about-quarto",
+    "href": "intro.html#about-quarto",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1.1 How it works:\n\nYou write individual chapters in Markdown (.qmd or .md).\nA simple configuration file (_quarto.yml) stitches them together into a beautiful textbook.\nOutputs can be PDF (via LaTeX), HTML/E-book, and MS Word from the exact same source files.\n\n\n\n1.1.2 Why it’s easy:\n\nYou don’t need to know deep LaTeX formatting;\nQuarto handles cross-references (e.g., “See Figure 2.3”), citations, and indexing automatically.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "99-appendix.html",
+    "href": "99-appendix.html",
+    "title": "Appendix: Supplemental Operations",
+    "section": "",
+    "text": "Upgrading the Quarto CLI\nThis appendix contains technical maintenance procedures and system modifications that support your core writing environment but fall outside daily authoring workflows.\nBecause Quarto is under active, rapid development, you may occasionally need to step your system up to a newer engine baseline. Upgrading inside WSL is highly stable: downloading and running a new installer package automatically replaces the older binary files while leaving your text projects, folders, and workspace variables completely untouched.",
+    "crumbs": [
+      "Appendix: Supplemental Operations"
+    ]
+  },
+  {
+    "objectID": "99-appendix.html#sec-upgrade-quarto",
+    "href": "99-appendix.html#sec-upgrade-quarto",
+    "title": "Appendix: Supplemental Operations",
+    "section": "",
+    "text": "Note\n\n\n\nWhen I was working on quarto 1.4.555 version, I used to be asked to login to polyfill.io because the Quarto page relied on an outdated template or MathJax script that still attempted to load a script from the compromised domain polyfill.io. Earlier versions of Quarto (prior to 1.4.557) generated HTML files utilizing MathJax defaults that included links to the polyfill.io. The easiest and most effective fix was to download the [latest Quarto version][quarto.org], which automatically replaces the vulnerable script with safe alternatives like Cloudflare.\n\n\n\nThe Upgrade Workflow\nTo pull down and apply the current stable production build, execute this sequence in your WSL terminal:\n# 1. Purge any stale, leftover installer packages from your environment\nrm -f quarto-*-linux-amd64.deb\n\n# 2. Securely fetch the targeted release build from the official core repository\nwget [https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.38/quarto-1.9.38-linux-amd64.deb](https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.38/quarto-1.9.38-linux-amd64.deb)\n\n# 3. Apply the upgrade using Ubuntu's package deployment engine\nsudo dpkg -i quarto-1.9.38-linux-amd64.deb\n\n# 4. Confirm the underlying system kernel successfully registered the new version\nquarto --version",
+    "crumbs": [
+      "Appendix: Supplemental Operations"
+    ]
+  },
+  {
+    "objectID": "05-ongoing-management.html#because-your-publishing-system-is-fully-integrated-with-git-and-quarto-updating-your-live-book-follows-a-highly-structured-predictable-workflow.",
+    "href": "05-ongoing-management.html#because-your-publishing-system-is-fully-integrated-with-git-and-quarto-updating-your-live-book-follows-a-highly-structured-predictable-workflow.",
+    "title": "6  Long-Term Maintenance & Ongoing Management",
+    "section": "6.2 Because your publishing system is fully integrated with Git and Quarto, updating your live book follows a highly structured, predictable workflow.",
+    "text": "6.2 Because your publishing system is fully integrated with Git and Quarto, updating your live book follows a highly structured, predictable workflow.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Long-Term Maintenance & Ongoing Management</span>"
     ]
   }
 ]
