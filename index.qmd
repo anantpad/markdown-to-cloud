@@ -1,5 +1,17 @@
 # Preface {.unnumbered}
 
-Welcome to the **DevOps & Cloud Publishing Handbook**. This digital text serves as a step-by-step documentation manual for setting up a modern, automated technical writing environment using Windows Subsystem for Linux (WSL), Quarto, and GitHub Pages.
+Welcome to the world of **Living Textbooks**. I believe this is the biggest revolution shift in academic publishing. These are also known as open-access online textbooks. Instead of waiting five years for a publisher to print a costly "6th Edition" just to fix typos and update a few charts, authors now treat their textbooks like software: they update them continuously in real time, and students access them for free online.
 
-Each chapter builds sequentially on the last, providing complete code snippets and dedicated troubleshooting sections covering the exact edge-case failures you might encounter during the setup process.
+This handbook is a guide that will help authors follow the exact modern workflow used by tech and science professors today. 
+
+With a living textbook, you as an author can update instantly while students are actively using it. 
+
+## Key Advantages of a Living Textbook
+
++ Crowdsourced Errata: Many authors put a "Report a Typo" link at the bottom of every page that links directly to their GitHub. If a student spots a broken link or a misspelling, they can submit a fix, and the author can accept it with one click.
++ Interactive Elements: Because it's a website, authors can embed interactive Python/R code blocks, videos, or animations directly inside the text—things a paper textbook could never do.  
++ No "Out of Stock" issues: Every student has access from day one, entirely for free.
+
+This **handbook** serves as a step-by-step documentation manual for setting up a modern, automated technical writing environment using **Windows Subsystem for Linux (WSL)**, **Quarto**, and **GitHub Pages**. 
+
+Use **Quarto** to write, **GitHub** to store your files, and **GitHub Pages** to host the website. This handbook is divided into Chapters. Each chapter builds sequentially on the last, providing complete code snippets and dedicated troubleshooting sections covering the exact edge-case failures you might encounter during the setup process.

@@ -1,5 +1,20 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+Writing a textbook is a massive undertaking, but choosing the right tooling can save you hundreds of hours of formatting headaches. 
 
-See @knuth84 for additional discussion of literate programming.
+I use **VS Code on Windows** via the **Remote - WSL extension** to write books in **Markdown**, and compile it using **Quarto installation on Ubuntu WSL instance** for local building, and push the source files to **GitHub** for version control and use **GitHub Actions** to automatically build, render and host my books on **GitHub pages**. 
+
+This technical handbook is an engineering manual that starts with assuming the technical environment, moves linearly through execution and wraps up with the lomg term management and updates - with dedicated troubleshooting sections - as applicable.
+
+## About Quarto
+Quarto is best for most authors, especially those including data, code, or math. 
+Quarto is an open-source scientific and technical publishing system backed by Posit (formerly RStudio). It allows you to write in plain Markdown but handles complex LaTeX math perfectly under the hood. More on Quarto, click here [Quarto](https://quarto.org/)
+
+### How it works: 
+- You write individual chapters in Markdown (.qmd or .md). 
+- A simple configuration file (_quarto.yml) stitches them together into a beautiful textbook.
+- Outputs can be PDF (via LaTeX), HTML/E-book, and MS Word from the exact same source files.
+
+### Why it’s easy: 
++ You don't need to know deep LaTeX formatting; 
++ Quarto handles cross-references (e.g., "See Figure 2.3"), citations, and indexing automatically.

@@ -1,18 +1,74 @@
 # System Prerequisites
 
+## The **"Living Textbook**" Tech Stack
+To make this work smoothly, you use three open-source tools together:
+
++ The Writing Tool (Quarto or Bookdown): You write your textbook in simple Markdown.  
++ The Code Repository (GitHub): You store your textbook files on GitHub.
++ The Web Host (GitHub Pages): A free service that takes your Markdown files and turns them into a public website for your students.
+
 Before launching a Quarto project, your local partition requires a Linux kernel layer running alongside your Windows host file system.
 
 ## Environment Architecture
-* **OS:** Windows 11 with WSL2 (Ubuntu 22.04 LTS or 24.04 LTS kernel).
-* **CLI Engine:** Quarto Interactive CLI toolset.
-* **IDE Link:** VS Code connected via the Remote - WSL extension.
+* **OS:** Windows 11 with WSL2 (Ubuntu 22.04 LTS or 24.04 LTS kernel). 
+  This is the closest to real Linux dev while keeping Windows usability. WSL (Windows Subsystem for Linux) is a feature in Windows that allows you to run a Linux distribution directly within Windows without needing a virtual machine or dual-boot setup. It provides a compatibility layer for executing Linux binaries natively on Windows.
+
+* **IDE:** VS Code connected via the Remote - WSL extension.
+
+## Download Quarto
+* Quarto like any software tool (similar to Python or Git) needs to be installed globally on your Ubuntu system so that it can be run from anywhere. On Ubuntu inside WSL, you can install Quarto via your terminal in just a few commands. In your terminal, run these three commands:
+
+```bash
+# 1. Download the installer file to your system.
+wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.555/quarto-1.4.555-linux-amd64.deb
+# wget just downloads the temporary .deb installer file to whatever folder you are currently standing in
+
+# 2. Install it globally using Ubuntu's package manager. 
+sudo apt install ./quarto-1.4.555-linux-amd64.deb
+# sudo apt install extracts that file and installs Quarto globally into Ubuntu's system folders (like /usr/local/bin)
+# Once the installation is complete, the quarto command becomes available everywhere across your entire WSL system.
+
+# 3. Make sure Quarto is alive and kicking
+quarto --version
+# It should return the version number. You can safely clean up the installer file using the next step
+
+# 3. Clean up and delete the installer file since you don't need it anymore
+rm quarto-1.4.555-linux-amd64.deb
+```
+
+::: {.callout-warning}
+## Permission denied Errors
+You may see a classic Ubuntu `_apt` permissions quirk! This is a very common side-effect when you download a file using `wget` and then try to hand it off to `apt` immediately. Because `wget` saved the file with permissions restricted to your personal user account, the system user named `_apt` isn't allowed to read it to complete the installation.
+
+**The Fix:** We can fix this instantly by granting `_apt` permission to read the file, or by using a slightly different command to install it.
+```bash
+# Give everyone read permission for just this installer file
+chmod +x ./quarto-1.4.555-linux-amd64.deb
+
+# Run the install again using dpkg (which bypasses the _apt user restriction)
+sudo dpkg -i ./quarto-1.4.555-linux-amd64.deb
+
+# Fix any potential missing dependencies just in case
+sudo apt-get install -f
+```
+Then continue with # 3 above
+:::
+
+:::{.callout-tip}
+## Keeping Your System Up to Date
+If you already have Quarto installed but need to jump to the latest release to leverage newer background compiling features, follow the step-by-step pipeline detailed in [Appendix A: Upgrading Quarto](#sec-upgrade-quarto).
+:::
+
+## Get a free GitHub Account
+* If you don't have one already, sign up at [GitHub](github.com).
+
 
 ## Troubleshooting & Gotchas
 
 ::: {.callout-warning}
 ## Gotcha: Headless Browser Errors
 Because WSL runs as a headless Linux server inside Windows, commands that attempt to automatically open web windows (like `xdg-open`) will fail with:
-`xdg-open: no method available for opening 'http://localhost:7364/'`
+`xdg-open: no method available for opening 'http://localhost:xxxx/'`
 
-**The Fix:** The engine is running perfectly despite the message. Copy the local loopback string (`http://localhost:7364/`) manually, open your standard Windows browser (Chrome/Edge), and paste it into the address bar.
+**The Fix:** The engine is running perfectly despite the message. Copy the local loopback string (`http://localhost:xxxx/`) manually, open your standard Windows browser (Chrome/Edge), and paste it into the address bar.
 :::

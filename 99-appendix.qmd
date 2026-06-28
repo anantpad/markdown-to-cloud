@@ -1,0 +1,51 @@
+# Appendix: Supplemental Operations {#sec-appendix .unnumbered}
+
+This appendix contains technical maintenance procedures and system modifications that support your core writing environment but fall outside daily authoring workflows.
+
+## A. Upgrading the Quarto CLI {#sec-upgrade-quarto}
+
+Because Quarto is under active, rapid development, you may occasionally need to step your system up to a newer engine baseline. Upgrading inside WSL is highly stable: downloading and running a new installer package automatically replaces the older binary files while leaving your text projects, folders, and workspace variables completely untouched.
+
+:::{.callout-note}
+When I was working on quarto 1.4.555 version, I used to be asked to login to polyfill.io because the Quarto page relied on an outdated template or MathJax script that still attempted to load a script from the compromised domain polyfill.io. Earlier versions of Quarto (prior to 1.4.557) generated HTML files utilizing MathJax defaults that included links to the polyfill.io. The easiest and most effective fix was to download the [latest Quarto version][quarto.org], which automatically replaces the vulnerable script with safe alternatives like Cloudflare.
+:::
+
+### The Upgrade Workflow
+To pull down and apply the current stable production build, execute this sequence in your WSL terminal:
+
+```bash
+# 1. Purge any stale, leftover installer packages from your environment
+rm -f quarto-*-linux-amd64.deb
+
+# 2. Securely fetch the targeted release build from the official core repository
+wget [https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.38/quarto-1.9.38-linux-amd64.deb](https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.38/quarto-1.9.38-linux-amd64.deb)
+
+# 3. Apply the upgrade using Ubuntu's package deployment engine
+sudo dpkg -i quarto-1.9.38-linux-amd64.deb
+
+# 4. Confirm the underlying system kernel successfully registered the new version
+quarto --version
+```
+
+### B. Common Git commands from WSL Terminal {#sec-git-commands}
+Backing up source configurations requires connecting your local Linux file directory to a cloud-hosted Git tracking tree.
+
+#### Connection Commands
+Execute these tracking operations inside your root project folder:
+```bash
+git init
+git add .
+git commit -m "initial textbook setup"
+git branch -M main
+# COPY AND PASTE THE EXACT REMOTE URL FROM YOUR GITHUB PAGE
+git remote add origin [https://github.com/YOUR-USERNAME/my-textbook.git](https://github.com/YOUR-USERNAME/my-textbook.git)
+git push -u origin main
+```
+With that your source files are safely backed up on GitHub
+
+On an ongoing basis to make sure your core markdown files are safely saved to your main GitHub repository cloud, run your standard git backup command every now and then:
+```bash
+git add .
+git commit -m "added new content"
+git push origin main
+```

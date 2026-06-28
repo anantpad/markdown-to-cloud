@@ -1,1 +1,12 @@
 /.quarto/
+*.deb
+_book/
+/_site/
+/.ipynb_checkpoints/
+*.csv
+*.xlsx
+*.rds
+*.pkl
+*.mp4
+
+**/*.quarto_ipynb

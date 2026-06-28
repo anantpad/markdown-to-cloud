@@ -1,11 +1,9 @@
 # First-Time Book Project Setup
 
-Initializing a technical textbook project creates a self-contained compilation ecosystem with specialized asset configuration profiles.
+In this chapter, we will generate a pre-configured textbook template. Quarto makes creating a book incredibly easy because it has a built-in template that sets up the structure for you.
 
-## Initialization Code
-
-To stand up a pristine textbook scaffold inside your working directory, execute:
-
+## Initialize the book structure
+Make sure you are in your desired directory inside WSL. Run the following commands. These commands will create the textook project right there.
 ```bash
 # Initialize a new Quarto book project skeleton
 quarto create project book my-textbook
@@ -15,3 +13,50 @@ cd my-textbook
 
 # Initialize local workspace link to VS Code
 code .
+```
+This creates a new folder called my-textbook inside your selected directory with everything you need:
+
++ _quarto.yml: The main configuration file (the "brain" of your book).
++ index.qmd: Your textbook's introduction page.
++ intro.qmd, summary.qmd: Example chapters.
+
+Open this new folder inside VS Code. You can write standard Markdown in these files, and insert any code by enclosing it in 3 back tick blocks (e.g., ```git add .```), and LaTeX math by enclosing it in $ blocks (e.g., $E = mc^2$).
+
+## Clean Up and Configure Files
+Inside VS Code, look at the Explorer sidebar. You will see several files. Let's configure them.
+
+### Create a `.gitignore`:
+Create a new file named .gitignore in the root folder and paste these lines so you don't accidental upload temporary files to GitHub. Following is an example of content in a typical `.gitignore` file
+
+```gitignore
+/.quarto/
+/_site/
+/.ipynb_checkpoints/
+*.csv
+*.xlsx
+*.rds
+*.pkl
+*.mp4
+
+**/*.quarto_ipynb
+```
+
+### Update Book Settings (`_quarto.yml`)
+Open _quarto.yml. This file dictates the layout of your book. Replace its contents with your requirements. Metadata options available are given here. [YAML options](https://quarto-tdg.org/yaml). Think of the options available as 
++ Project Metadata - to define project type `book` 
++ Document Metadata - to define `title`, `author`, `language`, etc.
++ Output formats - `html`, `pdf`, `epub`, `docx`
++ Lists - multiple values using YAML sequence syntax
+Supported datatypes include, `string`, `boolean`, `numbers`, `list`, `array`, literal blocks
+
+:::{.callout-note}
+## Chapters
+:::
+
+### Writing Content
+Open index.qmd (this is your book's homepage / Preface). Replace the text with a quick welcome. Try out writing `code` and $LaTex$ formulae and other `markdown` syntax
+
+:::{.callout-tip}
+## Writing New Chapters
+Structure the _quarto.yml file to organize your textbook's chapters, sections, and appendix
+:::

@@ -1,38 +1,42 @@
 # Long-Term Maintenance & Ongoing Management
+Your technical textbook is a living document. It will require updates, errata fixes, and new content periodically — if not daily. 
 
-Your technical textbook is a living document. It will require updates, errata fixes, and new content periodically — if not daily. Because your publishing system is fully integrated with Git and Quarto, updating your live book follows a highly structured, predictable workflow.
+## How the Continuous Update Workflow Works
+Once you set this up, updating your textbook takes seconds. The workflow feels invisible:
 
-Whenever you are ready to modify your content, follow this step-by-step developer loop.
+1. Fix a typo or add a section:In your local text editor. Open your Markdown chapter file on your computer. Make your edits, add a new LaTeX equation, or drop in a new code example.
+2. Push changes to GitHub:10 seconds. Save the file and "push" your update to your GitHub repository (just like saving code to the cloud).
+3. Automatic background build: 1-2 minutes.An automated script (called a GitHub Action) triggers in the cloud. It automatically runs Quarto, reads your updated Markdown, updates the textbook's table of contents, and recompiles the website.
+4. The student's view is instantly updated: Immediate. The next time a student refreshes the website on their phone or laptop, the new paragraph, fix, or assignment is right there.
 
+Because your publishing system is fully integrated with Git and Quarto, updating your live book follows a highly structured, predictable workflow.
 ---
-
 ## The Daily Writing Loop
 <b><u>Mental Model</u></b>
+
 ```{mermaid}
 %%| label: fig-quarto-workflow
 %%| fig-cap: "Daily Writing and Publishing Workflow"
 flowchart LR
 %% Define
     A("Initialize Environment<br>(WSL Terminal)") --> B("Sync Local Workspace<br>(Pull from git)") --> C("Launch Preview<br>(local browser)")
-    C --> D("Add/Update Content<br>(update .qmd files)") --> E("Publish Updates<br>(Quarto Publish)") --> F("Secure Source Text<br>(Commit to git)")
+    C --> D("Add/Update Content<br>(update .qmd files)") --> E("Publish Updates<br>(Quarto Publish)") --> F("Secure Source Text<br>(Push to git)")
 ```
 
+Whenever you are ready to modify your content, follow this step-by-step developer loop.
 ### Step 1: Initialize Your Environment
 Open your WSL terminal and change directories to your project folder:
-
 ```bash
 cd ~/my-textbook
 ```
 ### Step 2: Sync Your Local Workspace
 Before making any edits, always pull the latest tracking tree from your remote repository to ensure you are building on top of your most recent cloud backup:
-
 ```bash
 git pull origin main
 ```
 
 ### Step 3: Launch Your Live Editing Space
 Open the current directory inside VS Code and spin up the local preview daemon. This allows you to view your changes in real-time in your browser as you type:
-
 ```bash
 # Open VS Code
 code .
@@ -59,10 +63,6 @@ quarto publish gh-pages
 ```
 
 ### Step 6: Secure Your Core Source Text
-While the production website is now live on GitHub Pages, your raw markdown source files are still only sitting on your local machine. Back up your core workspace changes back to your primary GitHub cloud tree:
+While the production website is now live on GitHub Pages, your raw markdown source files are still only sitting on your local machine. Back up your core workspace changes back to your primary GitHub cloud tree. 
 
-```bash
-git add .
-git commit -m "Updated content and structural revisions"
-git push origin main
-```
+Git commands from WSL terminal are provided [here](#sec-git-commands) for reference.
