@@ -216,6 +216,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Long-Term Maintenance &amp; Ongoing Management</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./99-appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix: Supplemental Operations</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -227,6 +233,12 @@ window.Quarto = {
    
   <ul>
   <li><a href="#initialize-the-book-structure" id="toc-initialize-the-book-structure" class="nav-link active" data-scroll-target="#initialize-the-book-structure"><span class="header-section-number">3.1</span> Initialize the book structure</a></li>
+  <li><a href="#clean-up-and-configure-files" id="toc-clean-up-and-configure-files" class="nav-link" data-scroll-target="#clean-up-and-configure-files"><span class="header-section-number">3.2</span> Clean Up and Configure Files</a>
+  <ul class="collapse">
+  <li><a href="#create-a-.gitignore" id="toc-create-a-.gitignore" class="nav-link" data-scroll-target="#create-a-.gitignore"><span class="header-section-number">3.2.1</span> Create a <code>.gitignore</code>:</a></li>
+  <li><a href="#update-book-settings-_quarto.yml" id="toc-update-book-settings-_quarto.yml" class="nav-link" data-scroll-target="#update-book-settings-_quarto.yml"><span class="header-section-number">3.2.2</span> Update Book Settings (<code>_quarto.yml</code>)</a></li>
+  <li><a href="#writing-content" id="toc-writing-content" class="nav-link" data-scroll-target="#writing-content"><span class="header-section-number">3.2.3</span> Writing Content</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -270,9 +282,61 @@ window.Quarto = {
 <li>index.qmd: Your textbook’s introduction page.</li>
 <li>intro.qmd, summary.qmd: Example chapters.</li>
 </ul>
-<p>Open this new folder inside VS Code. You can write standard Markdown in these files, and insert any code by enclosing it in ```<code>blocks (</code>), and LaTeX math by enclosing it in $ blocks (e.g., <span class="math inline">\(E = mc^2\)</span>).</p>
+<p>Open this new folder inside VS Code. You can write standard Markdown in these files, and insert any code by enclosing it in 3 back tick blocks (e.g., <code>git add .</code>), and LaTeX math by enclosing it in $ blocks (e.g., <span class="math inline">\(E = mc^2\)</span>).</p>
+</section>
+<section id="clean-up-and-configure-files" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="clean-up-and-configure-files"><span class="header-section-number">3.2</span> Clean Up and Configure Files</h2>
+<p>Inside VS Code, look at the Explorer sidebar. You will see several files. Let’s configure them.</p>
+<section id="create-a-.gitignore" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="create-a-.gitignore"><span class="header-section-number">3.2.1</span> Create a <code>.gitignore</code>:</h3>
+<p>Create a new file named .gitignore in the root folder and paste these lines so you don’t accidental upload temporary files to GitHub. Following is an example of content in a typical <code>.gitignore</code> file</p>
+<pre class="gitignore"><code>/.quarto/
+/_site/
+/.ipynb_checkpoints/
+*.csv
+*.xlsx
+*.rds
+*.pkl
+*.mp4
+
+**/*.quarto_ipynb</code></pre>
+</section>
+<section id="update-book-settings-_quarto.yml" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="update-book-settings-_quarto.yml"><span class="header-section-number">3.2.2</span> Update Book Settings (<code>_quarto.yml</code>)</h3>
+<p>Open _quarto.yml. This file dictates the layout of your book. Replace its contents with your requirements. Metadata options available are given here. <a href="https://quarto-tdg.org/yaml">YAML options</a>. Think of the options available as + Project Metadata - to define project type <code>book</code> + Document Metadata - to define <code>title</code>, <code>author</code>, <code>language</code>, etc. + Output formats - <code>html</code>, <code>pdf</code>, <code>epub</code>, <code>docx</code> + Lists - multiple values using YAML sequence syntax Supported datatypes include, <code>string</code>, <code>boolean</code>, <code>numbers</code>, <code>list</code>, <code>array</code>, literal blocks</p>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Chapters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+<section id="writing-content" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="writing-content"><span class="header-section-number">3.2.3</span> Writing Content</h3>
+<p>Open index.qmd (this is your book’s homepage / Preface). Replace the text with a quick welcome. Try out writing <code>code</code> and <span class="math inline">\(LaTex\)</span> formulae and other <code>markdown</code> syntax</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Writing New Chapters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Structure the _quarto.yml file to organize your textbook’s chapters, sections, and appendix</p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

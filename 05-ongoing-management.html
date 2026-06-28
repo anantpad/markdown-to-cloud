@@ -242,10 +242,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="6.1" class="anchored" data-anchor-id="how-the-continuous-update-workflow-works"><span class="header-section-number">6.1</span> How the Continuous Update Workflow Works</h2>
 <p>Once you set this up, updating your textbook takes seconds. The workflow feels invisible:</p>
 <ol type="1">
-<li>Fix a typo or add a section:In your local text editor.Open your Markdown chapter file on your computer. Make your edits, add a new LaTeX equation, or drop in a new code example.</li>
-<li>Push changes to GitHub:10 seconds.Save the file and “push” your update to your GitHub repository (just like saving code to the cloud).</li>
+<li>Fix a typo or add a section:In your local text editor. Open your Markdown chapter file on your computer. Make your edits, add a new LaTeX equation, or drop in a new code example.</li>
+<li>Push changes to GitHub:10 seconds. Save the file and “push” your update to your GitHub repository (just like saving code to the cloud).</li>
 <li>Automatic background build: 1-2 minutes.An automated script (called a GitHub Action) triggers in the cloud. It automatically runs Quarto, reads your updated Markdown, updates the textbook’s table of contents, and recompiles the website.</li>
-<li>The student’s view is instantly updated:Immediate. The next time a student refreshes the website on their phone or laptop, the new paragraph, fix, or assignment is right there.</li>
+<li>The student’s view is instantly updated: Immediate. The next time a student refreshes the website on their phone or laptop, the new paragraph, fix, or assignment is right there.</li>
 </ol>
 </section>
 <section id="because-your-publishing-system-is-fully-integrated-with-git-and-quarto-updating-your-live-book-follows-a-highly-structured-predictable-workflow." class="level2" data-number="6.2">
@@ -299,10 +299,8 @@ flowchart LR
 </section>
 <section id="step-6-secure-your-core-source-text" class="level3" data-number="6.3.4">
 <h3 data-number="6.3.4" class="anchored" data-anchor-id="step-6-secure-your-core-source-text"><span class="header-section-number">6.3.4</span> Step 6: Secure Your Core Source Text</h3>
-<p>While the production website is now live on GitHub Pages, your raw markdown source files are still only sitting on your local machine. Back up your core workspace changes back to your primary GitHub cloud tree:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Updated content and structural revisions"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>While the production website is now live on GitHub Pages, your raw markdown source files are still only sitting on your local machine. Back up your core workspace changes back to your primary GitHub cloud tree.</p>
+<p>Git commands from WSL terminal are provided <a href="99-appendix.html#sec-git-commands">here</a> for reference.</p>
 
 
 </section>

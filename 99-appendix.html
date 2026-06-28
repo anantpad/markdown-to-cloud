@@ -202,9 +202,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-upgrade-quarto" id="toc-sec-upgrade-quarto" class="nav-link active" data-scroll-target="#sec-upgrade-quarto">Upgrading the Quarto CLI</a>
+  <li><a href="#sec-upgrade-quarto" id="toc-sec-upgrade-quarto" class="nav-link active" data-scroll-target="#sec-upgrade-quarto">A. Upgrading the Quarto CLI</a>
   <ul class="collapse">
   <li><a href="#the-upgrade-workflow" id="toc-the-upgrade-workflow" class="nav-link" data-scroll-target="#the-upgrade-workflow">The Upgrade Workflow</a></li>
+  <li><a href="#sec-git-commands" id="toc-sec-git-commands" class="nav-link" data-scroll-target="#sec-git-commands">B. Common Git commands from WSL Terminal</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -233,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>This appendix contains technical maintenance procedures and system modifications that support your core writing environment but fall outside daily authoring workflows.</p>
 <section id="sec-upgrade-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="sec-upgrade-quarto">Upgrading the Quarto CLI</h2>
+<h2 class="anchored" data-anchor-id="sec-upgrade-quarto">A. Upgrading the Quarto CLI</h2>
 <p>Because Quarto is under active, rapid development, you may occasionally need to step your system up to a newer engine baseline. Upgrading inside WSL is highly stable: downloading and running a new installer package automatically replaces the older binary files while leaving your text projects, folders, and workspace variables completely untouched.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -262,8 +263,28 @@ Note
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Confirm the underlying system kernel successfully registered the new version</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="sec-git-commands" class="level3">
+<h3 class="anchored" data-anchor-id="sec-git-commands">B. Common Git commands from WSL Terminal</h3>
+<p>Backing up source configurations requires connecting your local Linux file directory to a cloud-hosted Git tracking tree.</p>
+<section id="connection-commands" class="level4">
+<h4 class="anchored" data-anchor-id="connection-commands">Connection Commands</h4>
+<p>Execute these tracking operations inside your root project folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"initial textbook setup"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># COPY AND PASTE THE EXACT REMOTE URL FROM YOUR GITHUB PAGE</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin <span class="pp">[</span><span class="ss">https://github.com/YOUR</span><span class="pp">-</span><span class="ss">USERNAME/my</span><span class="pp">-</span><span class="ss">textbook.git</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://github.com/YOUR-USERNAME/my-textbook.git</span><span class="kw">)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>With that your source files are safely backed up on GitHub</p>
+<p>On an ongoing basis to make sure your core markdown files are safely saved to your main GitHub repository cloud, run your standard git backup command every now and then:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"added new content"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 </section>
 </section>
 

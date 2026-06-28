@@ -44,7 +44,7 @@
     "href": "02-project-setup.html",
     "title": "3  First-Time Book Project Setup",
     "section": "",
-    "text": "3.1 Initialize the book structure\nIn this chapter, we will generate a pre-configured textbook template. Quarto makes creating a book incredibly easy because it has a built-in template that sets up the structure for you.\nMake sure you are in your desired directory inside WSL. Run the following commands. These commands will create the textook project right there.\nThis creates a new folder called my-textbook inside your selected directory with everything you need:\nOpen this new folder inside VS Code. You can write standard Markdown in these files, and insert any code by enclosing it in ```blocks (), and LaTeX math by enclosing it in $ blocks (e.g., \\(E = mc^2\\)).",
+    "text": "3.1 Initialize the book structure\nIn this chapter, we will generate a pre-configured textbook template. Quarto makes creating a book incredibly easy because it has a built-in template that sets up the structure for you.\nMake sure you are in your desired directory inside WSL. Run the following commands. These commands will create the textook project right there.\nThis creates a new folder called my-textbook inside your selected directory with everything you need:\nOpen this new folder inside VS Code. You can write standard Markdown in these files, and insert any code by enclosing it in 3 back tick blocks (e.g., git add .), and LaTeX math by enclosing it in $ blocks (e.g., \\(E = mc^2\\)).",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>First-Time Book Project Setup</span>"
     ]
@@ -64,7 +64,7 @@
     "href": "05-ongoing-management.html#the-daily-writing-loop",
     "title": "6  Long-Term Maintenance & Ongoing Management",
     "section": "6.3 The Daily Writing Loop",
-    "text": "6.3 The Daily Writing Loop\nMental Model\n%%| label: fig-quarto-workflow\n%%| fig-cap: \"Daily Writing and Publishing Workflow\"\nflowchart LR\n%% Define\n    A(\"Initialize Environment&lt;br&gt;(WSL Terminal)\") --&gt; B(\"Sync Local Workspace&lt;br&gt;(Pull from git)\") --&gt; C(\"Launch Preview&lt;br&gt;(local browser)\")\n    C --&gt; D(\"Add/Update Content&lt;br&gt;(update .qmd files)\") --&gt; E(\"Publish Updates&lt;br&gt;(Quarto Publish)\") --&gt; F(\"Secure Source Text&lt;br&gt;(Push to git)\")\nWhenever you are ready to modify your content, follow this step-by-step developer loop. ### Step 1: Initialize Your Environment Open your WSL terminal and change directories to your project folder:\ncd ~/my-textbook\n\n6.3.1 Step 2: Sync Your Local Workspace\nBefore making any edits, always pull the latest tracking tree from your remote repository to ensure you are building on top of your most recent cloud backup:\ngit pull origin main\n\n\n6.3.2 Step 3: Launch Your Live Editing Space\nOpen the current directory inside VS Code and spin up the local preview daemon. This allows you to view your changes in real-time in your browser as you type:\n# Open VS Code\ncode .\n\n# Spin up the local web engine\nquarto preview\nStep 4: Author Your Content Modify existing .qmd files or generate entirely new ones.\n\n\n\n\n\n\nNoteImportant Structural Rule\n\n\n\nIf you add a brand new chapter file (e.g., 06-advanced-features.qmd), you must declare it inside your _quarto.yml file under the chapters: array. If it is omitted from the configuration mapping, Quarto will not compile it into the final book layout.\n\n\n\n\n6.3.3 Step 5: Publish Your Updates Live\nOnce your edits look perfect in your local browser preview, it is time to push them live. Halt the local preview engine and run the deployment engine:\nAction: Press Ctrl + C in your terminal to stop the preview\n# Build and push the static production pages to GitHub Pages\nquarto publish gh-pages\n\n\n6.3.4 Step 6: Secure Your Core Source Text\nWhile the production website is now live on GitHub Pages, your raw markdown source files are still only sitting on your local machine. Back up your core workspace changes back to your primary GitHub cloud tree:\ngit add .\ngit commit -m \"Updated content and structural revisions\"\ngit push origin main",
+    "text": "6.3 The Daily Writing Loop\nMental Model\n%%| label: fig-quarto-workflow\n%%| fig-cap: \"Daily Writing and Publishing Workflow\"\nflowchart LR\n%% Define\n    A(\"Initialize Environment&lt;br&gt;(WSL Terminal)\") --&gt; B(\"Sync Local Workspace&lt;br&gt;(Pull from git)\") --&gt; C(\"Launch Preview&lt;br&gt;(local browser)\")\n    C --&gt; D(\"Add/Update Content&lt;br&gt;(update .qmd files)\") --&gt; E(\"Publish Updates&lt;br&gt;(Quarto Publish)\") --&gt; F(\"Secure Source Text&lt;br&gt;(Push to git)\")\nWhenever you are ready to modify your content, follow this step-by-step developer loop. ### Step 1: Initialize Your Environment Open your WSL terminal and change directories to your project folder:\ncd ~/my-textbook\n\n6.3.1 Step 2: Sync Your Local Workspace\nBefore making any edits, always pull the latest tracking tree from your remote repository to ensure you are building on top of your most recent cloud backup:\ngit pull origin main\n\n\n6.3.2 Step 3: Launch Your Live Editing Space\nOpen the current directory inside VS Code and spin up the local preview daemon. This allows you to view your changes in real-time in your browser as you type:\n# Open VS Code\ncode .\n\n# Spin up the local web engine\nquarto preview\nStep 4: Author Your Content Modify existing .qmd files or generate entirely new ones.\n\n\n\n\n\n\nNoteImportant Structural Rule\n\n\n\nIf you add a brand new chapter file (e.g., 06-advanced-features.qmd), you must declare it inside your _quarto.yml file under the chapters: array. If it is omitted from the configuration mapping, Quarto will not compile it into the final book layout.\n\n\n\n\n6.3.3 Step 5: Publish Your Updates Live\nOnce your edits look perfect in your local browser preview, it is time to push them live. Halt the local preview engine and run the deployment engine:\nAction: Press Ctrl + C in your terminal to stop the preview\n# Build and push the static production pages to GitHub Pages\nquarto publish gh-pages\n\n\n6.3.4 Step 6: Secure Your Core Source Text\nWhile the production website is now live on GitHub Pages, your raw markdown source files are still only sitting on your local machine. Back up your core workspace changes back to your primary GitHub cloud tree.\nGit commands from WSL terminal are provided here for reference.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Long-Term Maintenance & Ongoing Management</span>"
     ]
@@ -94,7 +94,7 @@
     "href": "05-ongoing-management.html#how-the-continuous-update-workflow-works",
     "title": "6  Long-Term Maintenance & Ongoing Management",
     "section": "",
-    "text": "Fix a typo or add a section:In your local text editor.Open your Markdown chapter file on your computer. Make your edits, add a new LaTeX equation, or drop in a new code example.\nPush changes to GitHub:10 seconds.Save the file and “push” your update to your GitHub repository (just like saving code to the cloud).\nAutomatic background build: 1-2 minutes.An automated script (called a GitHub Action) triggers in the cloud. It automatically runs Quarto, reads your updated Markdown, updates the textbook’s table of contents, and recompiles the website.\nThe student’s view is instantly updated:Immediate. The next time a student refreshes the website on their phone or laptop, the new paragraph, fix, or assignment is right there.",
+    "text": "Fix a typo or add a section:In your local text editor. Open your Markdown chapter file on your computer. Make your edits, add a new LaTeX equation, or drop in a new code example.\nPush changes to GitHub:10 seconds. Save the file and “push” your update to your GitHub repository (just like saving code to the cloud).\nAutomatic background build: 1-2 minutes.An automated script (called a GitHub Action) triggers in the cloud. It automatically runs Quarto, reads your updated Markdown, updates the textbook’s table of contents, and recompiles the website.\nThe student’s view is instantly updated: Immediate. The next time a student refreshes the website on their phone or laptop, the new paragraph, fix, or assignment is right there.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Long-Term Maintenance & Ongoing Management</span>"
     ]
@@ -144,7 +144,7 @@
     "href": "01-prereqs.html#download-quarto",
     "title": "2  System Prerequisites",
     "section": "2.3 Download Quarto",
-    "text": "2.3 Download Quarto\n\nQuarto like any software tool (similar to Python or Git) needs to be installed globally on your Ubuntu system so that it can be run from anywhere. On Ubuntu inside WSL, you can install Quarto via your terminal in just a few commands. In your terminal, run these three commands:\n\n# 1. Download the installer file to your system.\nwget https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.555/quarto-1.4.555-linux-amd64.deb\n# wget just downloads the temporary .deb installer file to whatever folder you are currently standing in\n\n# 2. Install it globally using Ubuntu's package manager. \nsudo apt install ./quarto-1.4.555-linux-amd64.deb\n# sudo apt install extracts that file and installs Quarto globally into Ubuntu's system folders (like /usr/local/bin)\n# Once the installation is complete, the quarto command becomes available everywhere across your entire WSL system.\n\n# 3. Make sure Quarto is alive and kicking\nquarto --version\n# It should return the version number. You can safely clean up the installer file using the next step\n\n# 3. Clean up and delete the installer file since you don't need it anymore\nrm quarto-1.4.555-linux-amd64.deb\n\n\n\n\n\n\nWarningPermission denied Errors\n\n\n\nYou may see a classic Ubuntu _apt permissions quirk! This is a very common side-effect when you download a file using wget and then try to hand it off to apt immediately. Because wget saved the file with permissions restricted to your personal user account, the system user named _apt isn’t allowed to read it to complete the installation.\nThe Fix: We can fix this instantly by granting _apt permission to read the file, or by using a slightly different command to install it.\n# Give everyone read permission for just this installer file\nchmod +x ./quarto-1.4.555-linux-amd64.deb\n\n# Run the install again using dpkg (which bypasses the _apt user restriction)\nsudo dpkg -i ./quarto-1.4.555-linux-amd64.deb\n\n# Fix any potential missing dependencies just in case\nsudo apt-get install -f\nThen continue with # 3 above\n\n\n\n\n\n\n\n\nTipKeeping Your System Up to Date\n\n\n\nIf you already have Quarto installed but need to jump to the latest release to leverage newer background compiling features, follow the step-by-step pipeline detailed in Appendix A: Upgrading Quarto.\n\n\n:::",
+    "text": "2.3 Download Quarto\n\nQuarto like any software tool (similar to Python or Git) needs to be installed globally on your Ubuntu system so that it can be run from anywhere. On Ubuntu inside WSL, you can install Quarto via your terminal in just a few commands. In your terminal, run these three commands:\n\n# 1. Download the installer file to your system.\nwget https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.555/quarto-1.4.555-linux-amd64.deb\n# wget just downloads the temporary .deb installer file to whatever folder you are currently standing in\n\n# 2. Install it globally using Ubuntu's package manager. \nsudo apt install ./quarto-1.4.555-linux-amd64.deb\n# sudo apt install extracts that file and installs Quarto globally into Ubuntu's system folders (like /usr/local/bin)\n# Once the installation is complete, the quarto command becomes available everywhere across your entire WSL system.\n\n# 3. Make sure Quarto is alive and kicking\nquarto --version\n# It should return the version number. You can safely clean up the installer file using the next step\n\n# 3. Clean up and delete the installer file since you don't need it anymore\nrm quarto-1.4.555-linux-amd64.deb\n\n\n\n\n\n\nWarningPermission denied Errors\n\n\n\nYou may see a classic Ubuntu _apt permissions quirk! This is a very common side-effect when you download a file using wget and then try to hand it off to apt immediately. Because wget saved the file with permissions restricted to your personal user account, the system user named _apt isn’t allowed to read it to complete the installation.\nThe Fix: We can fix this instantly by granting _apt permission to read the file, or by using a slightly different command to install it.\n# Give everyone read permission for just this installer file\nchmod +x ./quarto-1.4.555-linux-amd64.deb\n\n# Run the install again using dpkg (which bypasses the _apt user restriction)\nsudo dpkg -i ./quarto-1.4.555-linux-amd64.deb\n\n# Fix any potential missing dependencies just in case\nsudo apt-get install -f\nThen continue with # 3 above\n\n\n\n\n\n\n\n\nTipKeeping Your System Up to Date\n\n\n\nIf you already have Quarto installed but need to jump to the latest release to leverage newer background compiling features, follow the step-by-step pipeline detailed in Appendix A: Upgrading Quarto.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>System Prerequisites</span>"
     ]
@@ -184,7 +184,7 @@
     "href": "99-appendix.html",
     "title": "Appendix: Supplemental Operations",
     "section": "",
-    "text": "Upgrading the Quarto CLI\nThis appendix contains technical maintenance procedures and system modifications that support your core writing environment but fall outside daily authoring workflows.\nBecause Quarto is under active, rapid development, you may occasionally need to step your system up to a newer engine baseline. Upgrading inside WSL is highly stable: downloading and running a new installer package automatically replaces the older binary files while leaving your text projects, folders, and workspace variables completely untouched.",
+    "text": "A. Upgrading the Quarto CLI\nThis appendix contains technical maintenance procedures and system modifications that support your core writing environment but fall outside daily authoring workflows.\nBecause Quarto is under active, rapid development, you may occasionally need to step your system up to a newer engine baseline. Upgrading inside WSL is highly stable: downloading and running a new installer package automatically replaces the older binary files while leaving your text projects, folders, and workspace variables completely untouched.",
     "crumbs": [
       "Appendix: Supplemental Operations"
     ]
@@ -194,7 +194,7 @@
     "href": "99-appendix.html#sec-upgrade-quarto",
     "title": "Appendix: Supplemental Operations",
     "section": "",
-    "text": "Note\n\n\n\nWhen I was working on quarto 1.4.555 version, I used to be asked to login to polyfill.io because the Quarto page relied on an outdated template or MathJax script that still attempted to load a script from the compromised domain polyfill.io. Earlier versions of Quarto (prior to 1.4.557) generated HTML files utilizing MathJax defaults that included links to the polyfill.io. The easiest and most effective fix was to download the [latest Quarto version][quarto.org], which automatically replaces the vulnerable script with safe alternatives like Cloudflare.\n\n\n\nThe Upgrade Workflow\nTo pull down and apply the current stable production build, execute this sequence in your WSL terminal:\n# 1. Purge any stale, leftover installer packages from your environment\nrm -f quarto-*-linux-amd64.deb\n\n# 2. Securely fetch the targeted release build from the official core repository\nwget [https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.38/quarto-1.9.38-linux-amd64.deb](https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.38/quarto-1.9.38-linux-amd64.deb)\n\n# 3. Apply the upgrade using Ubuntu's package deployment engine\nsudo dpkg -i quarto-1.9.38-linux-amd64.deb\n\n# 4. Confirm the underlying system kernel successfully registered the new version\nquarto --version",
+    "text": "Note\n\n\n\nWhen I was working on quarto 1.4.555 version, I used to be asked to login to polyfill.io because the Quarto page relied on an outdated template or MathJax script that still attempted to load a script from the compromised domain polyfill.io. Earlier versions of Quarto (prior to 1.4.557) generated HTML files utilizing MathJax defaults that included links to the polyfill.io. The easiest and most effective fix was to download the [latest Quarto version][quarto.org], which automatically replaces the vulnerable script with safe alternatives like Cloudflare.\n\n\n\nThe Upgrade Workflow\nTo pull down and apply the current stable production build, execute this sequence in your WSL terminal:\n# 1. Purge any stale, leftover installer packages from your environment\nrm -f quarto-*-linux-amd64.deb\n\n# 2. Securely fetch the targeted release build from the official core repository\nwget [https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.38/quarto-1.9.38-linux-amd64.deb](https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.38/quarto-1.9.38-linux-amd64.deb)\n\n# 3. Apply the upgrade using Ubuntu's package deployment engine\nsudo dpkg -i quarto-1.9.38-linux-amd64.deb\n\n# 4. Confirm the underlying system kernel successfully registered the new version\nquarto --version\n\n\nB. Common Git commands from WSL Terminal\nBacking up source configurations requires connecting your local Linux file directory to a cloud-hosted Git tracking tree.\n\nConnection Commands\nExecute these tracking operations inside your root project folder:\ngit init\ngit add .\ngit commit -m \"initial textbook setup\"\ngit branch -M main\n# COPY AND PASTE THE EXACT REMOTE URL FROM YOUR GITHUB PAGE\ngit remote add origin [https://github.com/YOUR-USERNAME/my-textbook.git](https://github.com/YOUR-USERNAME/my-textbook.git)\ngit push -u origin main\nWith that your source files are safely backed up on GitHub\nOn an ongoing basis to make sure your core markdown files are safely saved to your main GitHub repository cloud, run your standard git backup command every now and then:\ngit add .\ngit commit -m \"added new content\"\ngit push origin main",
     "crumbs": [
       "Appendix: Supplemental Operations"
     ]
@@ -207,6 +207,56 @@
     "text": "6.2 Because your publishing system is fully integrated with Git and Quarto, updating your live book follows a highly structured, predictable workflow.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Long-Term Maintenance & Ongoing Management</span>"
+    ]
+  },
+  {
+    "objectID": "99-appendix.html#connection-commands",
+    "href": "99-appendix.html#connection-commands",
+    "title": "Appendix: Supplemental Operations",
+    "section": "Connection Commands",
+    "text": "Connection Commands\nExecute these tracking operations inside your root project folder:",
+    "crumbs": [
+      "Appendix: Supplemental Operations"
+    ]
+  },
+  {
+    "objectID": "03-github-integration.html",
+    "href": "03-github-integration.html",
+    "title": "Living Textbooks",
+    "section": "",
+    "text": "fsdsdf",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>03-github-integration.html</span>"
+    ]
+  },
+  {
+    "objectID": "04-deployment.html",
+    "href": "04-deployment.html",
+    "title": "Living Textbooks",
+    "section": "",
+    "text": "dfafaf",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>04-deployment.html</span>"
+    ]
+  },
+  {
+    "objectID": "02-project-setup.html#clean-up-and-configure-files",
+    "href": "02-project-setup.html#clean-up-and-configure-files",
+    "title": "3  First-Time Book Project Setup",
+    "section": "3.2 Clean Up and Configure Files",
+    "text": "3.2 Clean Up and Configure Files\nInside VS Code, look at the Explorer sidebar. You will see several files. Let’s configure them.\n\n3.2.1 Create a .gitignore:\nCreate a new file named .gitignore in the root folder and paste these lines so you don’t accidental upload temporary files to GitHub. Following is an example of content in a typical .gitignore file\n/.quarto/\n/_site/\n/.ipynb_checkpoints/\n*.csv\n*.xlsx\n*.rds\n*.pkl\n*.mp4\n\n**/*.quarto_ipynb\n\n\n3.2.2 Update Book Settings (_quarto.yml)\nOpen _quarto.yml. This file dictates the layout of your book. Replace its contents with your requirements. Metadata options available are given here. YAML options. Think of the options available as + Project Metadata - to define project type book + Document Metadata - to define title, author, language, etc. + Output formats - html, pdf, epub, docx + Lists - multiple values using YAML sequence syntax Supported datatypes include, string, boolean, numbers, list, array, literal blocks\n\n\n\n\n\n\nNoteChapters\n\n\n\n\n\n\n\n\n3.2.3 Writing Content\nOpen index.qmd (this is your book’s homepage / Preface). Replace the text with a quick welcome. Try out writing code and \\(LaTex\\) formulae and other markdown syntax\n\n\n\n\n\n\nTipWriting New Chapters\n\n\n\nStructure the _quarto.yml file to organize your textbook’s chapters, sections, and appendix",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>First-Time Book Project Setup</span>"
+    ]
+  },
+  {
+    "objectID": "02-project-setup.html#writing-new-chapters",
+    "href": "02-project-setup.html#writing-new-chapters",
+    "title": "3  First-Time Book Project Setup",
+    "section": "3.3 Writing new Chapters",
+    "text": "3.3 Writing new Chapters",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>First-Time Book Project Setup</span>"
     ]
   }
 ]
