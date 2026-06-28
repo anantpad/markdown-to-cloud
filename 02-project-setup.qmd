@@ -30,6 +30,8 @@ Create a new file named .gitignore in the root folder and paste these lines so y
 
 ```gitignore
 /.quarto/
+/_book
+*.deb
 /_site/
 /.ipynb_checkpoints/
 *.csv

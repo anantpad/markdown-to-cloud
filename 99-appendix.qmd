@@ -25,7 +25,33 @@ sudo dpkg -i quarto-1.9.38-linux-amd64.deb
 
 # 4. Confirm the underlying system kernel successfully registered the new version
 quarto --version
+
+# 5. Remove downloaded .deb installer
+rm -f quarto-*-linux-amd64.deb
 ```
+:::{.callout-tip}
+## Git Push issues seen after an upgrade
+Based on which folder you downloaded the installer, you may have 'inadvertantly' downloaded it in one of the folders that is included in `git add .`. If that happens this large `.deb` file gets included in the list to be committed to git. The installer file is a large file and since `git push` has a 100MB limit, you will face commit and push issues. This is a classic Git trap! Git captured that massive installer file and tried to track it. Even if you delete the file now using your standard file manager, Git keeps it locked inside its historical staging memory. We can fix this instantly by telling Git to forget the installer ever existed. 
+```bash
+git rm --cached quarto-1.9.38-linux-amd64.deb
+```
+Also remember to add `*.deb` to the `.gitignore` file, so that such installer files are not picked by `git add .` Then attempt to add, commit and push again.
+
+At this stage if you still face push error, while .deb is not in the latest commit, it is still trapped inside your local Git history from the previous commit attempt. When you run git push, Git tries to upload the entire historical chain—including that heavy, blocked commit.
+Easy and cleanest way at this stage would be to simply reset your Git history back to its pristine state before that file got tracked, and then commit your clean files.
+
+```bash
+# 1. Reset your git memory
+git reset --mixed origin/main
+
+# 2. Re-stage your clean files
+git add .
+
+# 3. Create a fresh clean commit and push to cloud
+git commit -m "Re-commit textbook files excluding installer assets"
+git push origin main
+```
+:::
 
 ### B. Common Git commands from WSL Terminal {#sec-git-commands}
 Backing up source configurations requires connecting your local Linux file directory to a cloud-hosted Git tracking tree.
@@ -49,3 +75,10 @@ git add .
 git commit -m "added new content"
 git push origin main
 ```
+
+#### Other useful troubleshooting commands
+To verify the last push into git
+```bash
+git log -1
+```
+In this the `-1` indicates the latest version of the pushed files. For the last two commits use -2 and so on.
