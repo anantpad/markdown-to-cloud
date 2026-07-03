@@ -201,7 +201,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-github-integration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">03-github-integration.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Github Pages</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -269,13 +269,32 @@ window.Quarto = {
 <h2 data-number="3.1" class="anchored" data-anchor-id="initialize-the-book-structure"><span class="header-section-number">3.1</span> Initialize the book structure</h2>
 <p>Make sure you are in your desired directory inside WSL. Run the following commands. These commands will create the textook project right there.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a new Quarto book project skeleton</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project book my-textbook</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Navigate into the project directory</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my-textbook</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize local workspace link to VS Code</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project book my-textbook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You create the book project exactly once. It acts as the “bookshelf” and container for your entire project. <code>book</code> is a specific project type that tells Quarto exactly how to structure and compile your files. If you type <code>quarto create project book</code>, Quarto knows you are writing a multi-page document. It automatically sets up features like:</p>
+<ul>
+<li>A sidebar menu for navigating chapters.</li>
+<li>Continuous page numbering across the whole project.</li>
+<li>Cross-referencing capabilities (so you can link Section 1 to Section 4 seamlessly).</li>
+<li>The ability to export everything into a single PDF or EPUB.</li>
+</ul>
+<p>Chapters are just standard text files (like intro.qmd or chapter1.qmd) that live inside that book container. You don’t need a command to create them; you just make a new text file inside VS Code whenever you want to start a new chapter!</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Navigate into the project directory</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my-textbook</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize local workspace link to VS Code</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This creates a new folder called my-textbook inside your selected directory with everything you need:</p>
 <ul>
 <li>_quarto.yml: The main configuration file (the “brain” of your book).</li>
@@ -291,6 +310,8 @@ window.Quarto = {
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="create-a-.gitignore"><span class="header-section-number">3.2.1</span> Create a <code>.gitignore</code>:</h3>
 <p>Create a new file named .gitignore in the root folder and paste these lines so you don’t accidental upload temporary files to GitHub. Following is an example of content in a typical <code>.gitignore</code> file</p>
 <pre class="gitignore"><code>/.quarto/
+/_book
+*.deb
 /_site/
 /.ipynb_checkpoints/
 *.csv
@@ -303,7 +324,13 @@ window.Quarto = {
 </section>
 <section id="update-book-settings-_quarto.yml" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="update-book-settings-_quarto.yml"><span class="header-section-number">3.2.2</span> Update Book Settings (<code>_quarto.yml</code>)</h3>
-<p>Open _quarto.yml. This file dictates the layout of your book. Replace its contents with your requirements. Metadata options available are given here. <a href="https://quarto-tdg.org/yaml">YAML options</a>. Think of the options available as + Project Metadata - to define project type <code>book</code> + Document Metadata - to define <code>title</code>, <code>author</code>, <code>language</code>, etc. + Output formats - <code>html</code>, <code>pdf</code>, <code>epub</code>, <code>docx</code> + Lists - multiple values using YAML sequence syntax Supported datatypes include, <code>string</code>, <code>boolean</code>, <code>numbers</code>, <code>list</code>, <code>array</code>, literal blocks</p>
+<p>Open _quarto.yml. This file dictates the layout of your book. Replace its contents with your requirements. Metadata options available are given here. <a href="https://quarto-tdg.org/yaml">YAML options</a>. Think of the options available as</p>
+<ul>
+<li>Project Metadata - to define project type <code>book</code></li>
+<li>Document Metadata - to define <code>title</code>, <code>author</code>, <code>language</code>, etc.</li>
+<li>Output formats - <code>html</code>, <code>pdf</code>, <code>epub</code>, <code>docx</code></li>
+<li>Lists - multiple values using YAML sequence syntax Supported datatypes include, <code>string</code>, <code>boolean</code>, <code>numbers</code>, <code>list</code>, <code>array</code>, literal blocks</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-empty-content callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -747,8 +774,8 @@ window.Quarto = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03-github-integration.html" class="pagination-link" aria-label="03-github-integration.html">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">03-github-integration.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03-github-integration.html" class="pagination-link" aria-label="Github Pages">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Github Pages</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

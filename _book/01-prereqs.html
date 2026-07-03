@@ -172,7 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-github-integration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">03-github-integration.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Github Pages</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -237,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="2.1" class="anchored" data-anchor-id="the-living-textbook-tech-stack"><span class="header-section-number">2.1</span> The <strong>“Living Textbook</strong>” Tech Stack</h2>
 <p>To make this work smoothly, you use three open-source tools together:</p>
 <ul>
-<li>The Writing Tool (Quarto or Bookdown): You write your textbook in simple Markdown.<br>
+<li>The Writing Tool (Quarto): You write your textbook in simple Markdown.<br>
 </li>
 <li>The Code Repository (GitHub): You store your textbook files on GitHub.</li>
 <li>The Web Host (GitHub Pages): A free service that takes your Markdown files and turns them into a public website for your students.</li>
@@ -254,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="download-quarto" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="download-quarto"><span class="header-section-number">2.3</span> Download Quarto</h2>
 <ul>
-<li>Quarto like any software tool (similar to Python or Git) needs to be installed globally on your Ubuntu system so that it can be run from anywhere. On Ubuntu inside WSL, you can install Quarto via your terminal in just a few commands. In your terminal, run these three commands:</li>
+<li>Quarto like any software tool (similar to Python or Git) needs to be installed globally on your Ubuntu system so that it can be run from anywhere. On Ubuntu inside WSL, you can install Quarto via your terminal in just a few commands. In your terminal, run these commands:</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Download the installer file to your system.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.555/quarto-1.4.555-linux-amd64.deb</span>
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># It should return the version number. You can safely clean up the installer file using the next step</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Clean up and delete the installer file since you don't need it anymore</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Clean up and delete the installer file since you don't need it anymore</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> quarto-1.4.555-linux-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -304,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you already have Quarto installed but need to jump to the latest release to leverage newer background compiling features, follow the step-by-step pipeline detailed in <a href="99-appendix.html#sec-upgrade-quarto">Appendix A: Upgrading Quarto</a>.</p>
+<p>If you already have Quarto installed but need to jump to the latest release to leverage newer background compiling features, follow the step-by-step guideline detailed in <a href="99-appendix.html#sec-upgrade-quarto">Appendix A: Upgrading Quarto</a>.</p>
 </div>
 </div>
 </section>

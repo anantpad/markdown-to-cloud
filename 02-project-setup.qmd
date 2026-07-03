@@ -7,7 +7,21 @@ Make sure you are in your desired directory inside WSL. Run the following comman
 ```bash
 # Initialize a new Quarto book project skeleton
 quarto create project book my-textbook
+```
 
+:::{.callout-note}
+You create the book project exactly once. It acts as the "bookshelf" and container for your entire project. `book` is a specific project type that tells Quarto exactly how to structure and compile your files. If you type `quarto create project book`, Quarto knows you are writing a multi-page document. It automatically sets up features like:
+
+- A sidebar menu for navigating chapters.
+- Continuous page numbering across the whole project.
+- Cross-referencing capabilities (so you can link Section 1 to Section 4 seamlessly).
+- The ability to export everything into a single PDF or EPUB.
+
+Chapters are just standard text files (like intro.qmd or chapter1.qmd) that live inside that book container. You don't need a command to create them; you just make a new text file inside VS Code whenever you want to start a new chapter!
+:::
+
+
+```bash
 # Navigate into the project directory
 cd my-textbook
 
@@ -44,7 +58,9 @@ Create a new file named .gitignore in the root folder and paste these lines so y
 ```
 
 ### Update Book Settings (`_quarto.yml`)
-Open _quarto.yml. This file dictates the layout of your book. Replace its contents with your requirements. Metadata options available are given here. [YAML options](https://quarto-tdg.org/yaml). Think of the options available as 
+Open _quarto.yml. This file dictates the layout of your book. Replace its contents with your requirements. Metadata options available are given here. [YAML options](https://quarto-tdg.org/yaml). 
+Think of the options available as 
+
 + Project Metadata - to define project type `book` 
 + Document Metadata - to define `title`, `author`, `language`, etc.
 + Output formats - `html`, `pdf`, `epub`, `docx`

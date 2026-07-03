@@ -3,7 +3,7 @@
 ## The **"Living Textbook**" Tech Stack
 To make this work smoothly, you use three open-source tools together:
 
-+ The Writing Tool (Quarto or Bookdown): You write your textbook in simple Markdown.  
++ The Writing Tool (Quarto): You write your textbook in simple Markdown.  
 + The Code Repository (GitHub): You store your textbook files on GitHub.
 + The Web Host (GitHub Pages): A free service that takes your Markdown files and turns them into a public website for your students.
 
@@ -16,7 +16,7 @@ Before launching a Quarto project, your local partition requires a Linux kernel 
 * **IDE:** VS Code connected via the Remote - WSL extension.
 
 ## Download Quarto
-* Quarto like any software tool (similar to Python or Git) needs to be installed globally on your Ubuntu system so that it can be run from anywhere. On Ubuntu inside WSL, you can install Quarto via your terminal in just a few commands. In your terminal, run these three commands:
+* Quarto like any software tool (similar to Python or Git) needs to be installed globally on your Ubuntu system so that it can be run from anywhere. On Ubuntu inside WSL, you can install Quarto via your terminal in just a few commands. In your terminal, run these commands:
 
 ```bash
 # 1. Download the installer file to your system.
@@ -32,7 +32,7 @@ sudo apt install ./quarto-1.4.555-linux-amd64.deb
 quarto --version
 # It should return the version number. You can safely clean up the installer file using the next step
 
-# 3. Clean up and delete the installer file since you don't need it anymore
+# 4. Clean up and delete the installer file since you don't need it anymore
 rm quarto-1.4.555-linux-amd64.deb
 ```
 
@@ -56,7 +56,7 @@ Then continue with # 3 above
 
 :::{.callout-tip}
 ## Keeping Your System Up to Date
-If you already have Quarto installed but need to jump to the latest release to leverage newer background compiling features, follow the step-by-step pipeline detailed in [Appendix A: Upgrading Quarto](#sec-upgrade-quarto).
+If you already have Quarto installed but need to jump to the latest release to leverage newer background compiling features, follow the step-by-step guideline detailed in [Appendix A: Upgrading Quarto](#sec-upgrade-quarto).
 :::
 
 ## Get a free GitHub Account

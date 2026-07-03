@@ -7,7 +7,9 @@ This appendix contains technical maintenance procedures and system modifications
 Because Quarto is under active, rapid development, you may occasionally need to step your system up to a newer engine baseline. Upgrading inside WSL is highly stable: downloading and running a new installer package automatically replaces the older binary files while leaving your text projects, folders, and workspace variables completely untouched.
 
 :::{.callout-note}
-When I was working on quarto 1.4.555 version, I used to be asked to login to polyfill.io because the Quarto page relied on an outdated template or MathJax script that still attempted to load a script from the compromised domain polyfill.io. Earlier versions of Quarto (prior to 1.4.557) generated HTML files utilizing MathJax defaults that included links to the polyfill.io. The easiest and most effective fix was to download the [latest Quarto version][quarto.org], which automatically replaces the vulnerable script with safe alternatives like Cloudflare.
+When I was working on quarto 1.4.555 version, I used to be asked to login to polyfill.io because the Quarto page relied on an outdated template or MathJax script that still attempted to load a script from the compromised domain polyfill.io. Earlier versions of Quarto (prior to 1.4.557) generated HTML files utilizing MathJax defaults that included links to the polyfill.io. 
+
+The easiest and most effective fix was to download the [latest Quarto version](quarto.org), which automatically replaces the vulnerable script with safe alternatives like Cloudflare.
 :::
 
 ### The Upgrade Workflow
@@ -82,3 +84,19 @@ To verify the last push into git
 git log -1
 ```
 In this the `-1` indicates the latest version of the pushed files. For the last two commits use -2 and so on.
+
+### C. Generating Personal Access Token (PAT) on GitHub {#PAT-generation}
+
+1. Open your browser and go to your GitHub account.
+2. Click your profile picture in the top-right corner and go to <b>Settings</b>.
+3. Scroll all the way down on the left sidebar and click <b>Developer settings</b>.
+4. Click <b>Personal access tokens</b> $\rightarrow$ <b>Tokens (classic)</b>.
+5. Click the <b>Generate new token</b> dropdown $\rightarrow$ select <b>Generate new token (classic)</b>.
+6. Give it a name (e.g., wsl-textbook).
+7. Under <b>Select scopes</b>, check the box for `repo` (this gives it permission to update your repositories).
+8. Scroll to the bottom and click Generate token.
+
+:::{.callout-warning}
+## Copy that long token string immediately!
+Important: Copy that long token string immediately! Once you navigate away from this page, GitHub will never show it to you again.
+:::
