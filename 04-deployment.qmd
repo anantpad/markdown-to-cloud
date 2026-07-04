@@ -58,6 +58,7 @@ Quarto actually introduced a much smaller, dedicated tool specifically to handle
 ```bash
 quarto install chrome-headless-shell
 ``` 
+:::
 
 :::{.callout-warning}
 ## Could not install 'chrome-headless-shell'

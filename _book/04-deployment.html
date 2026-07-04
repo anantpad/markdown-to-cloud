@@ -293,6 +293,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p><code>quarto tools install chromium</code> may lead to this error The legacy quarto tools install chromium relies on a heavy background architecture (Puppeteer) that often misses core system libraries on Windows Subsystem for Linux and so you may see a warning - “WARNING: chromium can’t be installed fully on WSL with Quarto as system requirements could be missing.” Quarto actually introduced a much smaller, dedicated tool specifically to handle this without dragging in heavy dependencies or requiring you to mess around with system requirements. This drops in Google’s official, lightweight Chrome Headless Shell. It is designed strictly for background compilation, requires almost zero system dependencies, and is built exactly to handle headless platforms like WSL or Docker containers.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install chrome-headless-shell</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -316,8 +318,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
