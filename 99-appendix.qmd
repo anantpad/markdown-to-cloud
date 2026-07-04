@@ -6,7 +6,7 @@ This appendix contains technical maintenance procedures and system modifications
 
 Because Quarto is under active, rapid development, you may occasionally need to step your system up to a newer engine baseline. Upgrading inside WSL is highly stable: downloading and running a new installer package automatically replaces the older binary files while leaving your text projects, folders, and workspace variables completely untouched.
 
-:::{.callout-note}
+:::{.callout-note collapse="true"}
 When I was working on quarto 1.4.555 version, I used to be asked to login to polyfill.io because the Quarto page relied on an outdated template or MathJax script that still attempted to load a script from the compromised domain polyfill.io. Earlier versions of Quarto (prior to 1.4.557) generated HTML files utilizing MathJax defaults that included links to the polyfill.io. 
 
 The easiest and most effective fix was to download the [latest Quarto version](quarto.org), which automatically replaces the vulnerable script with safe alternatives like Cloudflare.
@@ -33,7 +33,7 @@ quarto --version
 # 5. Remove downloaded .deb installer
 rm -f quarto-*-linux-amd64.deb
 ```
-:::{.callout-tip}
+:::{.callout-warning collapse="true"}
 ## Git Push issues seen after an upgrade
 Based on which folder you downloaded the installer, you may have 'inadvertantly' downloaded it in one of the folders that is included in `git add .`. If that happens this large `.deb` file gets included in the list to be committed to git. The installer file is a large file and since `git push` has a 100MB limit, you will face commit and push issues. This is a classic Git trap! Git captured that massive installer file and tried to track it. Even if you delete the file now using your standard file manager, Git keeps it locked inside its historical staging memory. We can fix this instantly by telling Git to forget the installer ever existed. 
 ```bash
@@ -100,7 +100,7 @@ In this the `-1` indicates the latest version of the pushed files. For the last 
 7. Under <b>Select scopes</b>, check the box for `repo` (this gives it permission to update your repositories).
 8. Scroll to the bottom and click Generate token.
 
-:::{.callout-warning}
+:::{.callout-tip collapse="true"}
 ## Copy that long token string immediately!
 Important: Copy that long token string immediately! Once you navigate away from this page, GitHub will never show it to you again.
 :::

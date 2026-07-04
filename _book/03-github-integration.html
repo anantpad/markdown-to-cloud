@@ -252,17 +252,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Puts a timestamped lock and label on that package. It saves the snapshot locally on your machine</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial book setup"</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Stop Quarto preview, if running
+<span class="screen-reader-only">Note</span>Stop Quarto preview, if running
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>quarto preview</code> relies on your laptop to run a temporary server. Stop your Quarto preview if it’s still running (Ctrl + C) before you save to git.</p>
+</div>
 </div>
 </div>
 </section>
@@ -274,17 +277,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sends that locked, labeled package out of your laptop and up into your secure cloud backup vault on GitHub.</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>GitHub Credentials
+<span class="screen-reader-only">Tip</span>GitHub Credentials
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If GitHub prompts you for your credentials, enter your GitHub username and personal access token. GitHub disabled password authentication for Git operations on the command line quite a while ago to protect user accounts. Instead of your regular password, GitHub requires a Personal Access Token (PAT) or an SSH Key. In WSL, generating a PAT is the fastest and easiest way to clear this hurdle. See <a href="99-appendix.html#PAT-generation">Appendix C: Generating Personal Access Token (PAT) on GitHub</a> for detail steps.</p>
+</div>
 </div>
 </div>
 <p>Go back to your WSL terminal and try to push your files again</p>
@@ -294,14 +300,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>When it asks for your Password, paste your Personal Access Token instead of your password. (Note: Linux terminals hide passwords as you type them, so it will look like nothing is happening when you paste. Just paste it once and hit Enter).</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Caching the credentials
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Since typing that long token manually every single time is an absolute pain, we can tell Git to safely remember your token on your Ubuntu partition forever. Run this command in your WSL terminal. This tells Git to save your credentials in memory so you don’t have to keep pasting the token</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tell Git to Remember Your Token</span></span>
@@ -313,6 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Enter your username</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Paste your Personal Access Token when it prompts for the password</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If it says Everything up-to-date, that means Git successfully validated your token and has securely written it to your local WSL disk. From this exact millisecond forward, Git will never ask you for your password in WSL again</p>
+</div>
 </div>
 </div>
 

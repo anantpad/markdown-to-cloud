@@ -36,7 +36,7 @@ quarto --version
 rm quarto-1.4.555-linux-amd64.deb
 ```
 
-::: {.callout-warning}
+::: {.callout-warning collapse="true"}
 ## Permission denied Errors
 You may see a classic Ubuntu `_apt` permissions quirk! This is a very common side-effect when you download a file using `wget` and then try to hand it off to `apt` immediately. Because `wget` saved the file with permissions restricted to your personal user account, the system user named `_apt` isn't allowed to read it to complete the installation.
 
@@ -54,21 +54,10 @@ sudo apt-get install -f
 Then continue with # 3 above
 :::
 
-:::{.callout-tip}
+:::{.callout-note collapse="true"}
 ## Keeping Your System Up to Date
 If you already have Quarto installed but need to jump to the latest release to leverage newer background compiling features, follow the step-by-step guideline detailed in [Appendix A: Upgrading Quarto](#sec-upgrade-quarto).
 :::
 
 ## Get a free GitHub Account
 * If you don't have one already, sign up at [GitHub](github.com).
-
-
-## Troubleshooting & Gotchas
-
-::: {.callout-warning}
-## Gotcha: Headless Browser Errors
-Because WSL runs as a headless Linux server inside Windows, commands that attempt to automatically open web windows (like `xdg-open`) will fail with:
-`xdg-open: no method available for opening 'http://localhost:xxxx/'`
-
-**The Fix:** The engine is running perfectly despite the message. Copy the local loopback string (`http://localhost:xxxx/`) manually, open your standard Windows browser (Chrome/Edge), and paste it into the address bar.
-:::

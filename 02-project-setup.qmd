@@ -9,8 +9,10 @@ Make sure you are in your desired directory inside WSL. Run the following comman
 quarto create project book my-textbook
 ```
 
-:::{.callout-note}
-You create the book project exactly once. It acts as the "bookshelf" and container for your entire project. `book` is a specific project type that tells Quarto exactly how to structure and compile your files. If you type `quarto create project book`, Quarto knows you are writing a multi-page document. It automatically sets up features like:
+:::{.callout-note collapse="true"}
+
+## You create the book project exactly once. 
+It acts as the "bookshelf" and container for your entire project. `book` is a specific project type that tells Quarto exactly how to structure and compile your files. If you type `quarto create project book`, Quarto knows you are writing a multi-page document. It automatically sets up features like:
 
 - A sidebar menu for navigating chapters.
 - Continuous page numbering across the whole project.
@@ -67,7 +69,7 @@ Think of the options available as
 + Lists - multiple values using YAML sequence syntax
 Supported datatypes include, `string`, `boolean`, `numbers`, `list`, `array`, literal blocks
 
-:::{.callout-note}
+:::{.callout-note collapse="true"}
 ## Chapters
 When you have your book outline and chapters decided, open your `_quarto.yml` file in VS Code and replace the chapters: section so it maps out your new book structure cleanly.
 For instance, you could update the `_quarto.yml` file like this
@@ -91,9 +93,27 @@ touch 01-prereqs.qmd 02-project-setup.qmd 03-github-integration.qmd 04-deploymen
 :::
 
 ### Writing Content
-Open index.qmd (this is your book's homepage / Preface). Replace the text with a quick welcome. Try out writing `code` and $LaTex$ formulae and other `markdown` syntax
+Populate each of the chapters with content, code, gotchas. Open index.qmd (this is your book's homepage / Preface). Replace the text with a quick welcome. Try out writing `code` and $LaTex$ formulae and other `markdown` syntax
 
-:::{.callout-tip}
+:::{.callout-tip collapse="true"}
 ## Writing New Chapters
 Structure the _quarto.yml file to organize your textbook's chapters, sections, and appendix
+:::
+
+### Preview Content
+One of the best features of using Quarto inside VS Code is the live preview. You don't have to keep publishing to the web just to see how your textbook looks while you write.
+In your VS Code terminal inside your book's directory, run
+```bash
+quarto preview
+```
+Quarto will start a small local development server. It will open a browser window (passing it through seamlessly from WSL to Windows) showing your textbook.
+
+Every single time you press Ctrl + S to save a chapter in VS Code, Quarto notices the change, re-renders that specific page, and instantly refreshes the browser view. You can literally watch your text formatting and LaTeX equations render perfectly side-by-side as you type.
+
+::: {.callout-warning collapse="true"}
+## Gotcha: Headless Browser Errors
+Because WSL runs as a headless Linux server inside Windows, commands that attempt to automatically open web windows (like `xdg-open`) will fail with:
+`xdg-open: no method available for opening 'http://localhost:xxxx/'`
+
+**The Fix:** The engine is running perfectly despite the message. Copy the local loopback string (`http://localhost:xxxx/`) manually, open your standard Windows browser (Chrome/Edge), and paste it into the address bar.
 :::

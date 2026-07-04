@@ -73,7 +73,7 @@ quarto preview
 ### Step 4: Author Your Content
 Modify existing .qmd files or generate entirely new ones.
 
-::: {.callout-note}
+::: {.callout-important collapse="true"}
 ## Important Structural Rule
 If you add a brand new chapter file (e.g., 06-advanced-features.qmd), you must declare it inside your _quarto.yml file under the chapters: array. If it is omitted from the configuration mapping, Quarto will not compile it into the final book layout.
 :::

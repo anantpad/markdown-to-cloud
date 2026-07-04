@@ -207,7 +207,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#environment-architecture" id="toc-environment-architecture" class="nav-link" data-scroll-target="#environment-architecture"><span class="header-section-number">2.2</span> Environment Architecture</a></li>
   <li><a href="#download-quarto" id="toc-download-quarto" class="nav-link" data-scroll-target="#download-quarto"><span class="header-section-number">2.3</span> Download Quarto</a></li>
   <li><a href="#get-a-free-github-account" id="toc-get-a-free-github-account" class="nav-link" data-scroll-target="#get-a-free-github-account"><span class="header-section-number">2.4</span> Get a free GitHub Account</a></li>
-  <li><a href="#troubleshooting-gotchas" id="toc-troubleshooting-gotchas" class="nav-link" data-scroll-target="#troubleshooting-gotchas"><span class="header-section-number">2.5</span> Troubleshooting &amp; Gotchas</a></li>
   </ul>
 </nav>
     </div>
@@ -272,14 +271,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Clean up and delete the installer file since you don't need it anymore</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> quarto-1.4.555-linux-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Warning</span>Permission denied Errors
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You may see a classic Ubuntu <code>_apt</code> permissions quirk! This is a very common side-effect when you download a file using <code>wget</code> and then try to hand it off to <code>apt</code> immediately. Because <code>wget</code> saved the file with permissions restricted to your personal user account, the system user named <code>_apt</code> isn’t allowed to read it to complete the installation.</p>
 <p><strong>The Fix:</strong> We can fix this instantly by granting <code>_apt</code> permission to read the file, or by using a slightly different command to install it.</p>
@@ -294,17 +295,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Then continue with # 3 above</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Keeping Your System Up to Date
+<span class="screen-reader-only">Note</span>Keeping Your System Up to Date
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If you already have Quarto installed but need to jump to the latest release to leverage newer background compiling features, follow the step-by-step guideline detailed in <a href="99-appendix.html#sec-upgrade-quarto">Appendix A: Upgrading Quarto</a>.</p>
+</div>
 </div>
 </div>
 </section>
@@ -313,23 +318,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>If you don’t have one already, sign up at <a href="github.com">GitHub</a>.</li>
 </ul>
-</section>
-<section id="troubleshooting-gotchas" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="troubleshooting-gotchas"><span class="header-section-number">2.5</span> Troubleshooting &amp; Gotchas</h2>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Gotcha: Headless Browser Errors
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Because WSL runs as a headless Linux server inside Windows, commands that attempt to automatically open web windows (like <code>xdg-open</code>) will fail with: <code>xdg-open: no method available for opening 'http://localhost:xxxx/'</code></p>
-<p><strong>The Fix:</strong> The engine is running perfectly despite the message. Copy the local loopback string (<code>http://localhost:xxxx/</code>) manually, open your standard Windows browser (Chrome/Edge), and paste it into the address bar.</p>
-</div>
-</div>
 
 
 </section>

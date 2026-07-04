@@ -18,7 +18,7 @@ git add .
 git commit -m "Initial book setup"
 git branch -M main
 ```
-:::{.callout-warning}
+:::{.callout-note collapse="true"}
 ## Stop Quarto preview, if running
 `quarto preview` relies on your laptop to run a temporary server. Stop your Quarto preview if it's still running (Ctrl + C) before you save to git. 
 :::
@@ -33,7 +33,7 @@ git remote add origin https://github.com/YOUR-USERNAME/my-textbook.git
 # Sends that locked, labeled package out of your laptop and up into your secure cloud backup vault on GitHub.
 git push -u origin main
 ```
-:::{.callout-note}
+:::{.callout-tip collapse="true"}
 ## GitHub Credentials
 If GitHub prompts you for your credentials, enter your GitHub username and personal access token. GitHub disabled password authentication for Git operations on the command line quite a while ago to protect user accounts. Instead of your regular password, GitHub requires a Personal Access Token (PAT) or an SSH Key. In WSL, generating a PAT is the fastest and easiest way to clear this hurdle. See [Appendix C: Generating Personal Access Token (PAT) on GitHub](#PAT-generation) for detail steps.
 :::
@@ -46,7 +46,7 @@ git push -u origin main
 - When it asks for your Password, paste your Personal Access Token instead of your password.
 (Note: Linux terminals hide passwords as you type them, so it will look like nothing is happening when you paste. Just paste it once and hit Enter).
 
-:::{.callout-tip}
+:::{.callout-tip collapse="true"}
 ## Caching the credentials
 Since typing that long token manually every single time is an absolute pain, we can tell Git to safely remember your token on your Ubuntu partition forever.
 Run this command in your WSL terminal. This tells Git to save your credentials in memory so you don't have to keep pasting the token
