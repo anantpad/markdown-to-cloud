@@ -6,12 +6,14 @@ book:
   title: "Living Textbooks"
   subtitle: "A Handbook for authors to use WSL, Quarto, and GitHub Pages to create and maintain Living Textbooks"
   author: "Sridhar Ramachandran"
-  date: "6/27/2026"
+  date: last-modified
+  date-format: "MMMM DD, YYYY"
   sidebar:
     style: "docked"
     search: true
   chapters:
     - index.qmd
+    - changelog.qmd
     - intro.qmd
     - 01-prereqs.qmd
     - 02-project-setup.qmd
@@ -19,6 +21,7 @@ book:
     - 04-deployment.qmd
     - 05-ongoing-management.qmd
     - 99-appendix.qmd
+    - keywords.qmd
   page-footer: 
     left: "© 2026 Sridhar Ramachandran. All rights reserved."
     right: "Built with [Quarto](https://quarto.org/)"
@@ -29,8 +32,10 @@ format:
   html:
     theme: cosmo
     toc: true
+    toc-depth: 3
     code-copy: true
     # html-math-method: katex
   pdf:
     documentclass: scrreprt
     toc: true
+    toc-depth: 2
