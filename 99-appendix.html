@@ -267,18 +267,21 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="sec-upgrade-quarto">A. Upgrading the Quarto CLI</h2>
 <p>Because Quarto is under active, rapid development, you may occasionally need to step your system up to a newer engine baseline. Upgrading inside WSL is highly stable: downloading and running a new installer package automatically replaces the older binary files while leaving your text projects, folders, and workspace variables completely untouched.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Note
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>When I was working on quarto 1.4.555 version, I used to be asked to login to polyfill.io because the Quarto page relied on an outdated template or MathJax script that still attempted to load a script from the compromised domain polyfill.io. Earlier versions of Quarto (prior to 1.4.557) generated HTML files utilizing MathJax defaults that included links to the polyfill.io.</p>
 <p>The easiest and most effective fix was to download the <a href="quarto.org">latest Quarto version</a>, which automatically replaces the vulnerable script with safe alternatives like Cloudflare.</p>
 <p>Another bonus of upgrading: Once this script finishes and you are running the modern version, you will not need those complex browser troubleshooting workarounds! The new version natively supports Google’s lightweight testing engine.</p>
+</div>
 </div>
 </div>
 <section id="the-upgrade-workflow" class="level3">
@@ -298,15 +301,17 @@ Note
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Remove downloaded .deb installer</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> quarto-<span class="pp">*</span>-linux-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Git Push issues seen after an upgrade
+<span class="screen-reader-only">Warning</span>Git Push issues seen after an upgrade
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Based on which folder you downloaded the installer, you may have ‘inadvertantly’ downloaded it in one of the folders that is included in <code>git add .</code>. If that happens this large <code>.deb</code> file gets included in the list to be committed to git. The installer file is a large file and since <code>git push</code> has a 100MB limit, you will face commit and push issues. This is a classic Git trap! Git captured that massive installer file and tried to track it. Even if you delete the file now using your standard file manager, Git keeps it locked inside its historical staging memory. We can fix this instantly by telling Git to forget the installer ever existed.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rm <span class="at">--cached</span> quarto-1.9.38-linux-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -323,6 +328,7 @@ Note
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.  </span></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </div>
 </div>
 </section>
@@ -364,17 +370,20 @@ Note
 <li>Under <b>Select scopes</b>, check the box for <code>repo</code> (this gives it permission to update your repositories).</li>
 <li>Scroll to the bottom and click Generate token.</li>
 </ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Copy that long token string immediately!
+<span class="screen-reader-only">Tip</span>Copy that long token string immediately!
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Important: Copy that long token string immediately! Once you navigate away from this page, GitHub will never show it to you again.</p>
+</div>
 </div>
 </div>
 

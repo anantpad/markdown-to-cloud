@@ -238,6 +238,7 @@ window.Quarto = {
   <li><a href="#create-a-.gitignore" id="toc-create-a-.gitignore" class="nav-link" data-scroll-target="#create-a-.gitignore"><span class="header-section-number">3.2.1</span> Create a <code>.gitignore</code>:</a></li>
   <li><a href="#update-book-settings-_quarto.yml" id="toc-update-book-settings-_quarto.yml" class="nav-link" data-scroll-target="#update-book-settings-_quarto.yml"><span class="header-section-number">3.2.2</span> Update Book Settings (<code>_quarto.yml</code>)</a></li>
   <li><a href="#writing-content" id="toc-writing-content" class="nav-link" data-scroll-target="#writing-content"><span class="header-section-number">3.2.3</span> Writing Content</a></li>
+  <li><a href="#preview-content" id="toc-preview-content" class="nav-link" data-scroll-target="#preview-content"><span class="header-section-number">3.2.4</span> Preview Content</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -271,16 +272,18 @@ window.Quarto = {
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a new Quarto book project skeleton</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project book my-textbook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>You create the book project exactly once.
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>You create the book project exactly once. It acts as the “bookshelf” and container for your entire project. <code>book</code> is a specific project type that tells Quarto exactly how to structure and compile your files. If you type <code>quarto create project book</code>, Quarto knows you are writing a multi-page document. It automatically sets up features like:</p>
+<p>It acts as the “bookshelf” and container for your entire project. <code>book</code> is a specific project type that tells Quarto exactly how to structure and compile your files. If you type <code>quarto create project book</code>, Quarto knows you are writing a multi-page document. It automatically sets up features like:</p>
 <ul>
 <li>A sidebar menu for navigating chapters.</li>
 <li>Continuous page numbering across the whole project.</li>
@@ -288,6 +291,7 @@ Note
 <li>The ability to export everything into a single PDF or EPUB.</li>
 </ul>
 <p>Chapters are just standard text files (like intro.qmd or chapter1.qmd) that live inside that book container. You don’t need a command to create them; you just make a new text file inside VS Code whenever you want to start a new chapter!</p>
+</div>
 </div>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Navigate into the project directory</span></span>
@@ -332,14 +336,16 @@ Note
 <li>Lists - multiple values using YAML sequence syntax Supported datatypes include, <code>string</code>, <code>boolean</code>, <code>numbers</code>, <code>list</code>, <code>array</code>, literal blocks</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Note</span>Chapters
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>When you have your book outline and chapters decided, open your <code>_quarto.yml</code> file in VS Code and replace the chapters: section so it maps out your new book structure cleanly. For instance, you could update the <code>_quarto.yml</code> file like this</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">book:</span></span>
@@ -356,21 +362,49 @@ Note
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> 01-prereqs.qmd 02-project-setup.qmd 03-github-integration.qmd 04-deployment.qmd 05-ongoing-management.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
+</div>
 </section>
 <section id="writing-content" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="writing-content"><span class="header-section-number">3.2.3</span> Writing Content</h3>
-<p>Open index.qmd (this is your book’s homepage / Preface). Replace the text with a quick welcome. Try out writing <code>code</code> and <span class="math inline">\(LaTex\)</span> formulae and other <code>markdown</code> syntax</p>
+<p>Populate each of the chapters with content, code, gotchas. Open index.qmd (this is your book’s homepage / Preface). Replace the text with a quick welcome. Try out writing <code>code</code> and <span class="math inline">\(LaTex\)</span> formulae and other <code>markdown</code> syntax</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Writing New Chapters
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Structure the _quarto.yml file to organize your textbook’s chapters, sections, and appendix</p>
+</div>
+</div>
+</div>
+</section>
+<section id="preview-content" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="preview-content"><span class="header-section-number">3.2.4</span> Preview Content</h3>
+<p>One of the best features of using Quarto inside VS Code is the live preview. You don’t have to keep publishing to the web just to see how your textbook looks while you write. In your VS Code terminal inside your book’s directory, run</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Quarto will start a small local development server. It will open a browser window (passing it through seamlessly from WSL to Windows) showing your textbook.</p>
+<p>Every single time you press Ctrl + S to save a chapter in VS Code, Quarto notices the change, re-renders that specific page, and instantly refreshes the browser view. You can literally watch your text formatting and LaTeX equations render perfectly side-by-side as you type.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Gotcha: Headless Browser Errors
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Because WSL runs as a headless Linux server inside Windows, commands that attempt to automatically open web windows (like <code>xdg-open</code>) will fail with: <code>xdg-open: no method available for opening 'http://localhost:xxxx/'</code></p>
+<p><strong>The Fix:</strong> The engine is running perfectly despite the message. Copy the local loopback string (<code>http://localhost:xxxx/</code>) manually, open your standard Windows browser (Chrome/Edge), and paste it into the address bar.</p>
+</div>
 </div>
 </div>
 
