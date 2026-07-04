@@ -1,1 +1,80 @@
-dfafaf
+# Publish Book using GitHub Pages
+## Github Pages 
+To turn these files into a website your students can read, we will use GitHub Pages.
+
+## Add the magic automation step:
+Quarto has a built-in tool that handles all the heavy lifting of publishing. In your terminal, simply type:
+```bash
+quarto publish gh-pages
+```
+Quarto will ask you to confirm if you want to publish using GitHub Pages. Hit Y (Yes) and press Enter.
+This command seamlessly compiles all your Markdown chapters into optimized (HTML, CSS, and JavaScript) web pages, creates a hidden deployment branch on GitHub specifically for hosting, upload the HTML, and give you a live link at the very end of the terminal output and pushes the website live. `quarto publish` hands the keys over to GitHub. GitHub hosts your textbook on their massive, 24/7 data centers.
+Once this step finishes, Quarto will give you a live URL that looks like this:
+[https://YOUR-USERNAME.github.io/my-textbook/](https://YOUR-USERNAME.github.io/my-textbook/)
+
+Wait about 30 seconds for GitHub's cache to cycle, and refresh your live link.
+
+Once that publish command finishes and says it's done, your textbook lives permanently on the internet. It stays up and readable for anyone with the link, completely independent of whatever you are doing on your machine.
+
+Give that link to anyone, and they will see a completely responsive, modern online textbook. Whenever you make changes in the future, you fix a typo, add a chapter, or change an assignment in the future, you just type `quarto publish gh-pages` in your terminal again, and the website updates instantly.
+
+:::{.callout-tip}
+## Handling deployment crash
+If you see error like this while publishing -
+```bash
+fatal: a branch named 'gh-pages' already exists
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+```
+If the first deployment attempt crashed halfway through during the password check, it leaves behind a half-baked, broken `gh-pages` branch on your local machine which blocks Quarto from creating a clean one
+
+*The Fix* - We just need to clear out that broken background branch so Quarto can rebuild it cleanly. Run these two commands in your terminal to force-delete the broken branch and retry
+
+```bash
+# Delete the local broken background branch
+git branch -D gh-pages
+
+# Tell Quarto to try building it completely from scratch
+quarto publish gh-pages --no-prompt
+```
+Using the --no-prompt flag tells Quarto, "Hey, use the Git credentials I just saved in Step 1, don't stop to ask questions, just deploy."
+:::
+
+:::{.callout-warning}
+## Error: Chrome not found
+When you run `quarto publish`, you may see an error "Chrome not found". When you run `quarto preview`, Quarto doesn't need a browser installed on Linux because it just builds a tiny local web server and lets your Windows browser do the heavy lifting. However, when you run `quarto publish`, Quarto tries to spin up a hidden background browser (like Chrome or Chromium) inside the Linux environment to handle automated pre-rendering tasks (like generating search indexes, validating links, or rendering complex math equations cleanly). Because your WSL Ubuntu layer is fresh, it doesn't have a Linux browser installed yet.
+
+The Fix: In your WSL terminal, run command to let Quarto download its own isolated, lightweight version of Chromium directly into your toolset.
+```bash
+quarto tools install chromium
+```
+:::
+
+:::{.callout-warning}
+## WARNING: chromium can't be installed fully on WSL with Quarto as system requirements could be missing
+`quarto tools install chromium` may lead to this error
+The legacy quarto tools install chromium relies on a heavy background architecture (Puppeteer) that often misses core system libraries on Windows Subsystem for Linux and so you may see a warning - "WARNING: chromium can't be installed fully on WSL with Quarto as system requirements could be missing."
+Quarto actually introduced a much smaller, dedicated tool specifically to handle this without dragging in heavy dependencies or requiring you to mess around with system requirements. This drops in Google's official, lightweight Chrome Headless Shell. It is designed strictly for background compilation, requires almost zero system dependencies, and is built exactly to handle headless platforms like WSL or Docker containers.
+```bash
+quarto install chrome-headless-shell
+``` 
+
+:::{.callout-warning}
+## Could not install 'chrome-headless-shell'
+If your version of Quarto-CLI does not support `chrome-headless-shell`, try the following. Please review additional notes on [Quarto Upgrade](#sec-upgrade-quarto) to upgrade Quarto. Once this script finishes and you are running the modern version, you can completely ditch those complex browser troubleshooting workarounds we did earlier! The new version natively supports Google's lightweight testing engine. Then try this command
+```bash
+quarto install chrome-headless-shell
+```
+Alternately, we can tell Quarto to compile the project without looking for a browser, and then use the --no-render flag to ship it straight to the cloud. 
+```bash
+# 1. Force render your book pages locally without hitting the publishing browser gate
+quarto render --to html
+
+# 2. Tell Quarto to push the existing build directly to GitHub Pages without re-running the browser check
+quarto publish gh-pages --no-render --no-browser
+```
+`quarto render` handles the conversion of your .qmd files into clean, readable HTML books on your machine without triggering the browser requirements.
+Specifying `--to html` explicitly tells the compiler to stitch all the chapters tightly into the main sidebar grid configuration before saving the output.
+`quarto publish --no-render` acts as a pure delivery truck. It tells Quarto, "The book is already built. Don't touch Chrome, don't run a compile step—just grab the files and drop them off at my GitHub repository right now."
+The `--no-browser` flag tells Quarto: "Just compile my markdown and push the HTML files directly to GitHub Pages. Don't worry about trying to open a browser window on my machine when you're done."
+:::

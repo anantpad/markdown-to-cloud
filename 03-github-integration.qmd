@@ -1,6 +1,4 @@
-# Github Pages 
-To turn these files into a website your students can read, we will use GitHub Pages.
-
+# Backup Book Content to GitHub
 ## Create a GitHub Repository:
 1. Go to [GitHub]{https://github.com/} in your browser 
 2. Name your repository exactly my-textbook. 
@@ -12,13 +10,17 @@ To turn these files into a website your students can read, we will use GitHub Pa
 In your VS Code terminal, link your local folder to GitHub and push your files up:
 ```bash
 git init
+
+# Tell Git, "Hey, look at all these raw .qmd files I edited today. Get them ready to pack away." (Staging)
 git add .
+
+# Puts a timestamped lock and label on that package. It saves the snapshot locally on your machine
 git commit -m "Initial book setup"
 git branch -M main
 ```
 :::{.callout-warning}
 ## Stop Quarto preview, if running
-Stop your Quarto preview if it's still running (Ctrl + C) before you save to git.
+`quarto preview` relies on your laptop to run a temporary server. Stop your Quarto preview if it's still running (Ctrl + C) before you save to git. 
 :::
 
 ## Link WSL folder to GitHub
@@ -27,6 +29,8 @@ Look at the GitHub page you left open in your browser. Under the heading "…or 
 ```bash
 # COPY AND PASTE THE EXACT REMOTE URL FROM YOUR GITHUB PAGE
 git remote add origin https://github.com/YOUR-USERNAME/my-textbook.git
+
+# Sends that locked, labeled package out of your laptop and up into your secure cloud backup vault on GitHub.
 git push -u origin main
 ```
 :::{.callout-note}
@@ -57,38 +61,4 @@ git push origin main
 # Paste your Personal Access Token when it prompts for the password
 ```
 If it says Everything up-to-date, that means Git successfully validated your token and has securely written it to your local WSL disk. From this exact millisecond forward, Git will never ask you for your password in WSL again
-:::
-
-## Add the magic automation step:
-Quarto has a built-in tool that handles all the heavy lifting of publishing. In your terminal, simply type:
-```bash
-quarto publish gh-pages
-```
-Quarto will ask you to confirm if you want to publish using GitHub Pages. Hit Y (Yes) and press Enter.
-This command seamlessly compiles all your Markdown chapters into optimized HTML web pages, creates a hidden deployment branch on GitHub specifically for hosting, upload the HTML, and give you a live link at the very end of the terminal output and pushes the website live.
-Once this step finishes, Quarto will give you a live URL that looks like this:
-[https://YOUR-USERNAME.github.io/my-textbook/](https://YOUR-USERNAME.github.io/my-textbook/)
-
-Give that link to anyone, and they will see a completely responsive, modern online textbook. Whenever you make changes in the future, you fix a typo, add a chapter, or change an assignment in the future, you just type `quarto publish gh-pages` in your terminal again, and the website updates instantly.
-
-:::{.callout-tip}
-## Handling deployment crash
-If you see error like this while publishing -
-```bash
-fatal: a branch named 'gh-pages' already exists
-Already on 'main'
-Your branch is up to date with 'origin/main'.
-```
-If the first deployment attempt crashed halfway through during the password check, it leaves behind a half-baked, broken `gh-pages` branch on your local machine which blocks Quarto from creating a clean one
-
-*The Fix* - We just need to clear out that broken background branch so Quarto can rebuild it cleanly. Run these two commands in your terminal to force-delete the broken branch and retry
-
-```bash
-# Delete the local broken background branch
-git branch -D gh-pages
-
-# Tell Quarto to try building it completely from scratch
-quarto publish gh-pages --no-prompt
-```
-Using the --no-prompt flag tells Quarto, "Hey, use the Git credentials I just saved in Step 1, don't stop to ask questions, just deploy."
 :::

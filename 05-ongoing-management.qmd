@@ -8,22 +8,47 @@ Once you set this up, updating your textbook takes seconds. The workflow feels i
 2. Push changes to GitHub:10 seconds. Save the file and "push" your update to your GitHub repository (just like saving code to the cloud).
 3. Automatic background build: 1-2 minutes.An automated script (called a GitHub Action) triggers in the cloud. It automatically runs Quarto, reads your updated Markdown, updates the textbook's table of contents, and recompiles the website.
 4. The student's view is instantly updated: Immediate. The next time a student refreshes the website on their phone or laptop, the new paragraph, fix, or assignment is right there.
-
 Because your publishing system is fully integrated with Git and Quarto, updating your live book follows a highly structured, predictable workflow.
----
+
 ## The Daily Writing Loop
 <b><u>Mental Model</u></b>
 
 ```{mermaid}
 %%| label: fig-quarto-workflow
 %%| fig-cap: "Daily Writing and Publishing Workflow"
-flowchart LR
-%% Define
-    A("Initialize Environment<br>(WSL Terminal)") --> B("Sync Local Workspace<br>(Pull from git)") --> C("Launch Preview<br>(local browser)")
-    C --> D("Add/Update Content<br>(update .qmd files)") --> E("Publish Updates<br>(Quarto Publish)") --> F("Secure Source Text<br>(Push to git)")
+%%| fig-width: 8
+flowchart TD
+    %% Row 1 flows Left-to-Right
+    subgraph Row1 [" "]
+        direction LR
+        A("<span style='display: inline-block; width: 170px;'><b>1. Initialize Environment</b><br>WSL Terminal") --> B("<span style='display: inline-block; width: 170px;'><b>2. Sync Workspace</b><br>Pull from git") --> C("<span style='display: inline-block; width: 170px;'><b>3. Launch Preview</b><br>Quarto Preview")
+    end
+
+    %% Row 2 flows Right-to-Left (creates the physical snake loop)
+    subgraph Row2 [" "]
+        direction LR
+        D("<span style='display: inline-block; width: 170px;'><b>4. Update Content</b><br>Update .qmd Files") --> E("<span style='display: inline-block; width: 170px;'><b>5. Publish Live</b><br>Quarto Publish") --> F("<span style='display: inline-block; width: 170px;'><b>6. Secure Source</b><br>Push to git")
+    end
+
+    Row1(C) --> Row2(D) 
+
+    %% Style the phase container boundaries cleanly
+    style Row1 fill:#f8fafc,stroke:#cbd5e1,stroke-width:1px,stroke-dasharray: 5 5;
+    style Row2 fill:#f8fafc,stroke:#cbd5e1,stroke-width:1px,stroke-dasharray: 5 5;
+
+    %% Centralized Class Styling Definitions
+    classDef setupStyle fill:#e0f2fe,stroke:#0288d1,stroke-width:2px,color:#0369a1,font-size:13px;
+    classDef workStyle fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#15803d,font-size:13px;
+    classDef deployStyle fill:#faf5ff,stroke:#9333ea,stroke-width:2px,color:#6b21a8,font-size:13px;
+
+    %% Map nodes to respective classes
+    class A,B setupStyle;
+    class C,D workStyle;
+    class E,F deployStyle;
 ```
 
 Whenever you are ready to modify your content, follow this step-by-step developer loop.
+
 ### Step 1: Initialize Your Environment
 Open your WSL terminal and change directories to your project folder:
 ```bash
@@ -45,7 +70,7 @@ code .
 quarto preview
 ```
 
-Step 4: Author Your Content
+### Step 4: Author Your Content
 Modify existing .qmd files or generate entirely new ones.
 
 ::: {.callout-note}
@@ -61,6 +86,7 @@ Once your edits look perfect in your local browser preview, it is time to push t
 # Build and push the static production pages to GitHub Pages
 quarto publish gh-pages
 ```
+It compiles your raw markdown text into pretty, web-ready HTML pages and uploads them immediately to your live web server. Your readers see your updates instantly.
 
 ### Step 6: Secure Your Core Source Text
 While the production website is now live on GitHub Pages, your raw markdown source files are still only sitting on your local machine. Back up your core workspace changes back to your primary GitHub cloud tree. 

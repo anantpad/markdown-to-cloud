@@ -10,6 +10,8 @@ Because Quarto is under active, rapid development, you may occasionally need to 
 When I was working on quarto 1.4.555 version, I used to be asked to login to polyfill.io because the Quarto page relied on an outdated template or MathJax script that still attempted to load a script from the compromised domain polyfill.io. Earlier versions of Quarto (prior to 1.4.557) generated HTML files utilizing MathJax defaults that included links to the polyfill.io. 
 
 The easiest and most effective fix was to download the [latest Quarto version](quarto.org), which automatically replaces the vulnerable script with safe alternatives like Cloudflare.
+
+Another bonus of upgrading: Once this script finishes and you are running the modern version, you will not need those complex browser troubleshooting workarounds! The new version natively supports Google's lightweight testing engine. 
 :::
 
 ### The Upgrade Workflow
@@ -51,6 +53,8 @@ git add .
 
 # 3. Create a fresh clean commit and push to cloud
 git commit -m "Re-commit textbook files excluding installer assets"
+
+# 4.  
 git push origin main
 ```
 :::

@@ -69,6 +69,25 @@ Supported datatypes include, `string`, `boolean`, `numbers`, `list`, `array`, li
 
 :::{.callout-note}
 ## Chapters
+When you have your book outline and chapters decided, open your `_quarto.yml` file in VS Code and replace the chapters: section so it maps out your new book structure cleanly.
+For instance, you could update the `_quarto.yml` file like this
+```bash
+book:
+  ...
+  chapters:
+    - index.qmd
+    - 01-prereqs.qmd
+    - 02-project-setup.qmd
+    - 03-github-integration.qmd
+    - 04-deployment.qmd
+    - 05-ongoing-management.qmd
+...
+```
+Make sure to generate those blank `.qmd` files in your folder so Quarto doesn't throw a "file not found" error.
+Run this single command block in your terminal to create all five chapter files instantly
+```bash
+touch 01-prereqs.qmd 02-project-setup.qmd 03-github-integration.qmd 04-deployment.qmd 05-ongoing-management.qmd
+```
 :::
 
 ### Writing Content

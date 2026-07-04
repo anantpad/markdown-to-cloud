@@ -107,6 +107,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -204,13 +207,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#how-the-continuous-update-workflow-works" id="toc-how-the-continuous-update-workflow-works" class="nav-link active" data-scroll-target="#how-the-continuous-update-workflow-works"><span class="header-section-number">6.1</span> How the Continuous Update Workflow Works</a></li>
-  <li><a href="#because-your-publishing-system-is-fully-integrated-with-git-and-quarto-updating-your-live-book-follows-a-highly-structured-predictable-workflow." id="toc-because-your-publishing-system-is-fully-integrated-with-git-and-quarto-updating-your-live-book-follows-a-highly-structured-predictable-workflow." class="nav-link" data-scroll-target="#because-your-publishing-system-is-fully-integrated-with-git-and-quarto-updating-your-live-book-follows-a-highly-structured-predictable-workflow."><span class="header-section-number">6.2</span> Because your publishing system is fully integrated with Git and Quarto, updating your live book follows a highly structured, predictable workflow.</a></li>
-  <li><a href="#the-daily-writing-loop" id="toc-the-daily-writing-loop" class="nav-link" data-scroll-target="#the-daily-writing-loop"><span class="header-section-number">6.3</span> The Daily Writing Loop</a>
+  <li><a href="#the-daily-writing-loop" id="toc-the-daily-writing-loop" class="nav-link" data-scroll-target="#the-daily-writing-loop"><span class="header-section-number">6.2</span> The Daily Writing Loop</a>
   <ul class="collapse">
-  <li><a href="#step-2-sync-your-local-workspace" id="toc-step-2-sync-your-local-workspace" class="nav-link" data-scroll-target="#step-2-sync-your-local-workspace"><span class="header-section-number">6.3.1</span> Step 2: Sync Your Local Workspace</a></li>
-  <li><a href="#step-3-launch-your-live-editing-space" id="toc-step-3-launch-your-live-editing-space" class="nav-link" data-scroll-target="#step-3-launch-your-live-editing-space"><span class="header-section-number">6.3.2</span> Step 3: Launch Your Live Editing Space</a></li>
-  <li><a href="#step-5-publish-your-updates-live" id="toc-step-5-publish-your-updates-live" class="nav-link" data-scroll-target="#step-5-publish-your-updates-live"><span class="header-section-number">6.3.3</span> Step 5: Publish Your Updates Live</a></li>
-  <li><a href="#step-6-secure-your-core-source-text" id="toc-step-6-secure-your-core-source-text" class="nav-link" data-scroll-target="#step-6-secure-your-core-source-text"><span class="header-section-number">6.3.4</span> Step 6: Secure Your Core Source Text</a></li>
+  <li><a href="#step-1-initialize-your-environment" id="toc-step-1-initialize-your-environment" class="nav-link" data-scroll-target="#step-1-initialize-your-environment"><span class="header-section-number">6.2.1</span> Step 1: Initialize Your Environment</a></li>
+  <li><a href="#step-2-sync-your-local-workspace" id="toc-step-2-sync-your-local-workspace" class="nav-link" data-scroll-target="#step-2-sync-your-local-workspace"><span class="header-section-number">6.2.2</span> Step 2: Sync Your Local Workspace</a></li>
+  <li><a href="#step-3-launch-your-live-editing-space" id="toc-step-3-launch-your-live-editing-space" class="nav-link" data-scroll-target="#step-3-launch-your-live-editing-space"><span class="header-section-number">6.2.3</span> Step 3: Launch Your Live Editing Space</a></li>
+  <li><a href="#step-4-author-your-content" id="toc-step-4-author-your-content" class="nav-link" data-scroll-target="#step-4-author-your-content"><span class="header-section-number">6.2.4</span> Step 4: Author Your Content</a></li>
+  <li><a href="#step-5-publish-your-updates-live" id="toc-step-5-publish-your-updates-live" class="nav-link" data-scroll-target="#step-5-publish-your-updates-live"><span class="header-section-number">6.2.5</span> Step 5: Publish Your Updates Live</a></li>
+  <li><a href="#step-6-secure-your-core-source-text" id="toc-step-6-secure-your-core-source-text" class="nav-link" data-scroll-target="#step-6-secure-your-core-source-text"><span class="header-section-number">6.2.6</span> Step 6: Secure Your Core Source Text</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -245,37 +249,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Fix a typo or add a section:In your local text editor. Open your Markdown chapter file on your computer. Make your edits, add a new LaTeX equation, or drop in a new code example.</li>
 <li>Push changes to GitHub:10 seconds. Save the file and “push” your update to your GitHub repository (just like saving code to the cloud).</li>
 <li>Automatic background build: 1-2 minutes.An automated script (called a GitHub Action) triggers in the cloud. It automatically runs Quarto, reads your updated Markdown, updates the textbook’s table of contents, and recompiles the website.</li>
-<li>The student’s view is instantly updated: Immediate. The next time a student refreshes the website on their phone or laptop, the new paragraph, fix, or assignment is right there.</li>
+<li>The student’s view is instantly updated: Immediate. The next time a student refreshes the website on their phone or laptop, the new paragraph, fix, or assignment is right there. Because your publishing system is fully integrated with Git and Quarto, updating your live book follows a highly structured, predictable workflow.</li>
 </ol>
 </section>
-<section id="because-your-publishing-system-is-fully-integrated-with-git-and-quarto-updating-your-live-book-follows-a-highly-structured-predictable-workflow." class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="because-your-publishing-system-is-fully-integrated-with-git-and-quarto-updating-your-live-book-follows-a-highly-structured-predictable-workflow."><span class="header-section-number">6.2</span> Because your publishing system is fully integrated with Git and Quarto, updating your live book follows a highly structured, predictable workflow.</h2>
-</section>
-<section id="the-daily-writing-loop" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="the-daily-writing-loop"><span class="header-section-number">6.3</span> The Daily Writing Loop</h2>
+<section id="the-daily-writing-loop" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="the-daily-writing-loop"><span class="header-section-number">6.2</span> The Daily Writing Loop</h2>
 <p><b><u>Mental Model</u></b></p>
-<pre class="{mermaid}"><code>%%| label: fig-quarto-workflow
-%%| fig-cap: "Daily Writing and Publishing Workflow"
-flowchart LR
-%% Define
-    A("Initialize Environment&lt;br&gt;(WSL Terminal)") --&gt; B("Sync Local Workspace&lt;br&gt;(Pull from git)") --&gt; C("Launch Preview&lt;br&gt;(local browser)")
-    C --&gt; D("Add/Update Content&lt;br&gt;(update .qmd files)") --&gt; E("Publish Updates&lt;br&gt;(Quarto Publish)") --&gt; F("Secure Source Text&lt;br&gt;(Push to git)")</code></pre>
-<p>Whenever you are ready to modify your content, follow this step-by-step developer loop. ### Step 1: Initialize Your Environment Open your WSL terminal and change directories to your project folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/my-textbook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="step-2-sync-your-local-workspace" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="step-2-sync-your-local-workspace"><span class="header-section-number">6.3.1</span> Step 2: Sync Your Local Workspace</h3>
-<p>Before making any edits, always pull the latest tracking tree from your remote repository to ensure you are building on top of your most recent cloud backup:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell" data-fig-width="8" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-quarto-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-quarto-workflow">flowchart TD
+    %% Row 1 flows Left-to-Right
+    subgraph Row1 [" "]
+        direction LR
+        A("&lt;span style='display: inline-block; width: 170px;'&gt;&lt;b&gt;1. Initialize Environment&lt;/b&gt;&lt;br&gt;WSL Terminal") --&gt; B("&lt;span style='display: inline-block; width: 170px;'&gt;&lt;b&gt;2. Sync Workspace&lt;/b&gt;&lt;br&gt;Pull from git") --&gt; C("&lt;span style='display: inline-block; width: 170px;'&gt;&lt;b&gt;3. Launch Preview&lt;/b&gt;&lt;br&gt;Quarto Preview")
+    end
+
+    %% Row 2 flows Right-to-Left (creates the physical snake loop)
+    subgraph Row2 [" "]
+        direction LR
+        D("&lt;span style='display: inline-block; width: 170px;'&gt;&lt;b&gt;4. Update Content&lt;/b&gt;&lt;br&gt;Update .qmd Files") --&gt; E("&lt;span style='display: inline-block; width: 170px;'&gt;&lt;b&gt;5. Publish Live&lt;/b&gt;&lt;br&gt;Quarto Publish") --&gt; F("&lt;span style='display: inline-block; width: 170px;'&gt;&lt;b&gt;6. Secure Source&lt;/b&gt;&lt;br&gt;Push to git")
+    end
+
+    Row1(C) --&gt; Row2(D) 
+
+    %% Style the phase container boundaries cleanly
+    style Row1 fill:#f8fafc,stroke:#cbd5e1,stroke-width:1px,stroke-dasharray: 5 5;
+    style Row2 fill:#f8fafc,stroke:#cbd5e1,stroke-width:1px,stroke-dasharray: 5 5;
+
+    %% Centralized Class Styling Definitions
+    classDef setupStyle fill:#e0f2fe,stroke:#0288d1,stroke-width:2px,color:#0369a1,font-size:13px;
+    classDef workStyle fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#15803d,font-size:13px;
+    classDef deployStyle fill:#faf5ff,stroke:#9333ea,stroke-width:2px,color:#6b21a8,font-size:13px;
+
+    %% Map nodes to respective classes
+    class A,B setupStyle;
+    class C,D workStyle;
+    class E,F deployStyle;
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Daily Writing and Publishing Workflow
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Whenever you are ready to modify your content, follow this step-by-step developer loop.</p>
+<section id="step-1-initialize-your-environment" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="step-1-initialize-your-environment"><span class="header-section-number">6.2.1</span> Step 1: Initialize Your Environment</h3>
+<p>Open your WSL terminal and change directories to your project folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/my-textbook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="step-3-launch-your-live-editing-space" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="step-3-launch-your-live-editing-space"><span class="header-section-number">6.3.2</span> Step 3: Launch Your Live Editing Space</h3>
+<section id="step-2-sync-your-local-workspace" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="step-2-sync-your-local-workspace"><span class="header-section-number">6.2.2</span> Step 2: Sync Your Local Workspace</h3>
+<p>Before making any edits, always pull the latest tracking tree from your remote repository to ensure you are building on top of your most recent cloud backup:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-3-launch-your-live-editing-space" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="step-3-launch-your-live-editing-space"><span class="header-section-number">6.2.3</span> Step 3: Launch Your Live Editing Space</h3>
 <p>Open the current directory inside VS Code and spin up the local preview daemon. This allows you to view your changes in real-time in your browser as you type:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Open VS Code</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Spin up the local web engine</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Step 4: Author Your Content Modify existing .qmd files or generate entirely new ones.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Open VS Code</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Spin up the local web engine</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-4-author-your-content" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="step-4-author-your-content"><span class="header-section-number">6.2.4</span> Step 4: Author Your Content</h3>
+<p>Modify existing .qmd files or generate entirely new ones.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -290,15 +336,16 @@ flowchart LR
 </div>
 </div>
 </section>
-<section id="step-5-publish-your-updates-live" class="level3" data-number="6.3.3">
-<h3 data-number="6.3.3" class="anchored" data-anchor-id="step-5-publish-your-updates-live"><span class="header-section-number">6.3.3</span> Step 5: Publish Your Updates Live</h3>
+<section id="step-5-publish-your-updates-live" class="level3" data-number="6.2.5">
+<h3 data-number="6.2.5" class="anchored" data-anchor-id="step-5-publish-your-updates-live"><span class="header-section-number">6.2.5</span> Step 5: Publish Your Updates Live</h3>
 <p>Once your edits look perfect in your local browser preview, it is time to push them live. Halt the local preview engine and run the deployment engine:</p>
 <p><b>Action</b>: Press Ctrl + C in your terminal to stop the preview</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build and push the static production pages to GitHub Pages</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build and push the static production pages to GitHub Pages</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>It compiles your raw markdown text into pretty, web-ready HTML pages and uploads them immediately to your live web server. Your readers see your updates instantly.</p>
 </section>
-<section id="step-6-secure-your-core-source-text" class="level3" data-number="6.3.4">
-<h3 data-number="6.3.4" class="anchored" data-anchor-id="step-6-secure-your-core-source-text"><span class="header-section-number">6.3.4</span> Step 6: Secure Your Core Source Text</h3>
+<section id="step-6-secure-your-core-source-text" class="level3" data-number="6.2.6">
+<h3 data-number="6.2.6" class="anchored" data-anchor-id="step-6-secure-your-core-source-text"><span class="header-section-number">6.2.6</span> Step 6: Secure Your Core Source Text</h3>
 <p>While the production website is now live on GitHub Pages, your raw markdown source files are still only sitting on your local machine. Back up your core workspace changes back to your primary GitHub cloud tree.</p>
 <p>Git commands from WSL terminal are provided <a href="99-appendix.html#sec-git-commands">here</a> for reference.</p>
 
