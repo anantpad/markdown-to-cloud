@@ -201,13 +201,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-github-integration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Github Pages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Backup Book Content to GitHub</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-deployment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">04-deployment.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Publish Book using GitHub Pages</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -331,7 +331,7 @@ Note
 <li>Output formats - <code>html</code>, <code>pdf</code>, <code>epub</code>, <code>docx</code></li>
 <li>Lists - multiple values using YAML sequence syntax Supported datatypes include, <code>string</code>, <code>boolean</code>, <code>numbers</code>, <code>list</code>, <code>array</code>, literal blocks</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -341,7 +341,19 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>When you have your book outline and chapters decided, open your <code>_quarto.yml</code> file in VS Code and replace the chapters: section so it maps out your new book structure cleanly. For instance, you could update the <code>_quarto.yml</code> file like this</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">book:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">...</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">chapters:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> index.qmd</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> 01-prereqs.qmd</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> 02-project-setup.qmd</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> 03-github-integration.qmd</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> 04-deployment.qmd</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> 05-ongoing-management.qmd</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Make sure to generate those blank <code>.qmd</code> files in your folder so Quarto doesn’t throw a “file not found” error. Run this single command block in your terminal to create all five chapter files instantly</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> 01-prereqs.qmd 02-project-setup.qmd 03-github-integration.qmd 04-deployment.qmd 05-ongoing-management.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -774,8 +786,8 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03-github-integration.html" class="pagination-link" aria-label="Github Pages">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Github Pages</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03-github-integration.html" class="pagination-link" aria-label="Backup Book Content to GitHub">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Backup Book Content to GitHub</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

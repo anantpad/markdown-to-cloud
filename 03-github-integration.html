@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Github Pages – Living Textbooks</title>
+<title>4&nbsp; Backup Book Content to GitHub – Living Textbooks</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -120,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-github-integration.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Github Pages</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-github-integration.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Backup Book Content to GitHub</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -172,13 +172,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-github-integration.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Github Pages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Backup Book Content to GitHub</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-deployment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">04-deployment.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Publish Book using GitHub Pages</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -206,7 +206,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#create-a-github-repository" id="toc-create-a-github-repository" class="nav-link active" data-scroll-target="#create-a-github-repository"><span class="header-section-number">4.1</span> Create a GitHub Repository:</a></li>
   <li><a href="#push-your-code-to-github" id="toc-push-your-code-to-github" class="nav-link" data-scroll-target="#push-your-code-to-github"><span class="header-section-number">4.2</span> Push your code to GitHub:</a></li>
   <li><a href="#link-wsl-folder-to-github" id="toc-link-wsl-folder-to-github" class="nav-link" data-scroll-target="#link-wsl-folder-to-github"><span class="header-section-number">4.3</span> Link WSL folder to GitHub</a></li>
-  <li><a href="#add-the-magic-automation-step" id="toc-add-the-magic-automation-step" class="nav-link" data-scroll-target="#add-the-magic-automation-step"><span class="header-section-number">4.4</span> Add the magic automation step:</a></li>
   </ul>
 </nav>
     </div>
@@ -215,7 +214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Github Pages</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Backup Book Content to GitHub</span></h1>
 </div>
 
 
@@ -232,7 +231,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>To turn these files into a website your students can read, we will use GitHub Pages.</p>
 <section id="create-a-github-repository" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="create-a-github-repository"><span class="header-section-number">4.1</span> Create a GitHub Repository:</h2>
 <ol type="1">
@@ -247,9 +245,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="4.2" class="anchored" data-anchor-id="push-your-code-to-github"><span class="header-section-number">4.2</span> Push your code to GitHub:</h2>
 <p>In your VS Code terminal, link your local folder to GitHub and push your files up:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial book setup"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tell Git, "Hey, look at all these raw .qmd files I edited today. Get them ready to pack away." (Staging)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Puts a timestamped lock and label on that package. It saves the snapshot locally on your machine</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial book setup"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -260,7 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Stop your Quarto preview if it’s still running (Ctrl + C) before you save to git.</p>
+<p><code>quarto preview</code> relies on your laptop to run a temporary server. Stop your Quarto preview if it’s still running (Ctrl + C) before you save to git.</p>
 </div>
 </div>
 </section>
@@ -269,7 +271,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Look at the GitHub page you left open in your browser. Under the heading “…or push an existing repository from the command line”, you will see a command to add a remote origin. Copy and paste your specific command into your WSL terminal. It will look like this (replace with your actual GitHub username)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># COPY AND PASTE THE EXACT REMOTE URL FROM YOUR GITHUB PAGE</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/YOUR-USERNAME/my-textbook.git</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sends that locked, labeled package out of your laptop and up into your secure cloud backup vault on GitHub.</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -309,37 +313,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Enter your username</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Paste your Personal Access Token when it prompts for the password</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If it says Everything up-to-date, that means Git successfully validated your token and has securely written it to your local WSL disk. From this exact millisecond forward, Git will never ask you for your password in WSL again</p>
-</div>
-</div>
-</section>
-<section id="add-the-magic-automation-step" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="add-the-magic-automation-step"><span class="header-section-number">4.4</span> Add the magic automation step:</h2>
-<p>Quarto has a built-in tool that handles all the heavy lifting of publishing. In your terminal, simply type:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Quarto will ask you to confirm if you want to publish using GitHub Pages. Hit Y (Yes) and press Enter. This command seamlessly compiles all your Markdown chapters into optimized HTML web pages, creates a hidden deployment branch on GitHub specifically for hosting, upload the HTML, and give you a live link at the very end of the terminal output and pushes the website live. Once this step finishes, Quarto will give you a live URL that looks like this: <a href="https://YOUR-USERNAME.github.io/my-textbook/">https://YOUR-USERNAME.github.io/my-textbook/</a></p>
-<p>Give that link to anyone, and they will see a completely responsive, modern online textbook. Whenever you make changes in the future, you fix a typo, add a chapter, or change an assignment in the future, you just type <code>quarto publish gh-pages</code> in your terminal again, and the website updates instantly.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Handling deployment crash
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you see error like this while publishing -</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fatal:</span> a branch named <span class="st">'gh-pages'</span> already exists</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Already</span> on <span class="st">'main'</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Your</span> branch is up to date with <span class="st">'origin/main'</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If the first deployment attempt crashed halfway through during the password check, it leaves behind a half-baked, broken <code>gh-pages</code> branch on your local machine which blocks Quarto from creating a clean one</p>
-<p><em>The Fix</em> - We just need to clear out that broken background branch so Quarto can rebuild it cleanly. Run these two commands in your terminal to force-delete the broken branch and retry</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Delete the local broken background branch</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-D</span> gh-pages</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tell Quarto to try building it completely from scratch</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages <span class="at">--no-prompt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Using the –no-prompt flag tells Quarto, “Hey, use the Git credentials I just saved in Step 1, don’t stop to ask questions, just deploy.”</p>
 </div>
 </div>
 
@@ -754,8 +727,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./04-deployment.html" class="pagination-link" aria-label="04-deployment.html">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">04-deployment.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./04-deployment.html" class="pagination-link" aria-label="Publish Book using GitHub Pages">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Publish Book using GitHub Pages</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
