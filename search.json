@@ -24,7 +24,7 @@
     "href": "changelog.html",
     "title": "Version History",
     "section": "",
-    "text": "Version\nDate\nAuthor\nDescription of Changes\n\n\n\n\n0.0.4\nJuly 04, 2026\nSridhar Ramachandran\nUpdated deployment chapter, callouts, formatting\n\n\n0.0.3\nJuly 03, 2026\nSridhar Ramachandran\nUpdated github integration chapter\n\n\n0.0.2\nJun 28, 2026\nSridhar Ramachandran\nUpdated figures, appendix\n\n\n0.0.1\nJun 27, 2026\nSridhar Ramachandran\nInitial official publication",
+    "text": "Version\nDate\nAuthor\nDescription of Changes\n\n\n\n\n1.0.0\nJuly 04, 2026\nSridhar Ramachandran\nUpdated deployment chapter, callouts, formatting, added changelog\n\n\n0.0.3\nJuly 03, 2026\nSridhar Ramachandran\nUpdated github integration chapter\n\n\n0.0.2\nJun 28, 2026\nSridhar Ramachandran\nUpdated figures, appendix\n\n\n0.0.1\nJun 27, 2026\nSridhar Ramachandran\nInitial official publication",
     "crumbs": [
       "Version History"
     ]
