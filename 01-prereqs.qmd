@@ -16,6 +16,7 @@ Before launching a Quarto project, your local partition requires a Linux kernel 
 * **IDE:** VS Code connected via the Remote - WSL extension.
 
 ## Download Quarto
+* If you're on Windows, download and run the Quarto installer directly from [Quarto](www.quarto.org) — no additional setup like WSL or a Linux environment is required. Just double-click the installer like you would for any other program.
 * Quarto like any software tool (similar to Python or Git) needs to be installed globally on your Ubuntu system so that it can be run from anywhere. On Ubuntu inside WSL, you can install Quarto via your terminal in just a few commands. In your terminal, run these commands:
 
 ```bash

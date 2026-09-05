@@ -20,6 +20,7 @@ book:
     - 03-github-integration.qmd
     - 04-deployment.qmd
     - 05-ongoing-management.qmd
+    - 06-quick-start-reference.qmd
     - 99-appendix.qmd
   page-footer: 
     left: "© 2026 Sridhar Ramachandran. All rights reserved."
@@ -29,7 +30,10 @@ bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme:
+      - cosmo
+      - custom.scss
+    code-line-numbers: true
     toc: true
     toc-depth: 3
     code-copy: true

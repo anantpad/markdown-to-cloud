@@ -2,6 +2,8 @@
 
 | Version | Date | Author | Description of Changes |
 | :--- | :--- | :--- | :--- |
+| **1.0.2** | Sep 05, 2026 | Sridhar Ramachandran | Added new chapter "Quick Start Check List" |
+| **1.0.1** | July 05, 2026 | Sridhar Ramachandran | Added section on "who this Guide is for" in Introduction |
 | **1.0.0** | July 04, 2026 | Sridhar Ramachandran | Updated deployment chapter, callouts, formatting, added changelog |
 | **0.0.3** | July 03, 2026 | Sridhar Ramachandran | Updated github integration chapter |
 | **0.0.2** | Jun 28, 2026 | Sridhar Ramachandran | Updated figures, appendix |

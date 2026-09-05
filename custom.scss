@@ -1,0 +1,102 @@
+/*-- scss:defaults --*/
+
+// 1. Import high-quality academic and programming fonts
+@import url('https://googleapis.com');
+
+/* Apply it strictly to the book title */
+.title {
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem; /* Optional: adjusts size */
+}
+/* Style the Book Subtitle */
+.subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important; /* Forces the browser to override Quarto defaults */
+  color: #555555; /* Slightly lighter gray for hierarchy */
+  margin-top: 10px;
+}
+
+// 2. Assign the fonts (Updated to prioritize Verdana for UI and readability)
+$font-family-sans-serif: "Playfair Display", system-ui, -apple-system, sans-serif;
+$headings-font-family: "Playfair Display", system-ui, -apple-system, sans-serif;
+$font-family-serif: "Source Serif 4", Georgia, serif;
+$font-family-monospace: "Fira Code", "Courier New", monospace;
+
+// Force the main body text to use the Sans-Serif font (Verdana)
+$font-family-base: $font-family-sans-serif;
+
+// 3. Size, Spacing & Heading Adjustments
+$font-size-base: 0.9rem; 
+$line-height-base: 1.6;   
+
+// --- New Heading Refinements to fix the "ugly and large" look ---
+$headings-font-weight: 600;   // Drops headers from ultra-bold to a clean, academic semi-bold
+$headings-color: #1a1e22;     // Slightly darker than body text for subtle emphasis
+$h1-font-size: 1.3rem;        // Shrunk significantly (Default Bootstrap H1 is 2.5rem)
+$h2-font-size: 1.2rem;       // Shrunk (Default is 2rem)
+$h3-font-size: 1.1rem;       // Shrunk (Default is 1.75rem)
+$h4-font-size: 1.0rem;        // Shrunk (Default is 1.5rem)
+
+// --- New Left Sidebar (TOC) Size Controls ---
+$sidebar-font-size: 0.7rem;          // Shrinks general left sidebar text (Default is 0.925rem)
+$sidebar-font-size-section: 0.6rem;   // Shrinks deeper subsection items in the sidebar
+$toc-font-size: 0.825rem;             // Shrinks the right-side "On This Page" TOC text
+
+/* Target the Book/Site Title at the top of the left sidebar */
+.sidebar-title, 
+.quarto-sidebar-header .sidebar-title,
+a.sidebar-item-text.sidebar-link.embedding {
+  font-family: 'Playfair Display', sans-serif !important; /* Change to your preferred font */
+  font-size: 1.2rem !important;                     /* Sets the size you wanted */
+  font-weight: 700 !important;                       /* Adjusts thickness (boldness) */
+  line-height: 1.5 !important;
+}
+
+// 4. Color adjustments (Softer contrast to prevent eye strain)
+$body-bg: #fcfcfc; 
+$body-color: #24292e; 
+$link-color: #0056b3; 
+
+// 5. Code block customization (Sass Defaults)
+$code-color: #1a1e22;                 
+$code-block-bg: #f4f5f6;             
+
+
+/*-- scss:rules --*/
+// ⚡ BRUTE FORCE CODE FORMATTING OVERRIDES ⚡
+
+// 1. Target the absolute outermost structure of all code chunks
+div.sourceCode, 
+div.cell-output-display, 
+pre.sourceCode, 
+pre.sourceCode code {
+  font-size: 0.95em !important;      // Overrides syntax scaling to force code to look larger
+  background-color: #f4f5f6 !important;
+}
+
+// 2. Target the exact text strings, command tokens, and executable commands inside bash blocks
+.sourceCode span, 
+.sourceCode code span, 
+pre.sourceCode code span {
+  font-size: 0.95em !important;         // Keeps internal spans consistent with the parent container
+  color: #1a1e22 !important;         // Forces the code text (like mkdir, cd, echo) out of light gray/blue into dark charcoal
+}
+
+// 3. Target inline code fragments wrapped in single backticks `like this`
+code:not(pre code) {
+  font-size: 0.95em !important;
+  color: #1a1e22 !important;
+  font-weight: 500 !important;
+}
+
+// 4. Heavy override specifically targeting Pandoc's built-in comment classes (.co, .com)
+.sourceCode span.co, 
+.sourceCode span.com, 
+pre code span.co, 
+span.co {
+  color: #2e6640 !important;         // Forces code comments (# comment) to render as dark, legible charcoal slate
+  font-style: italic !important;     // Keeps them looking like clear textbook notations
+  opacity: 1 !important;             // Eliminates any default translucent styling
+}

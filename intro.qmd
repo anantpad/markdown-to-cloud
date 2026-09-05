@@ -1,8 +1,23 @@
-# Introduction
+# Introduction {.unnumbered}
+
+Welcome to the handbook! 
+
+::: {.callout-note appearance="simple" icon=true}
+## Who This Guide Is For
+
+This guide is written for teachers and educators who are comfortable using a computer day-to-day but may not have a software development background. We assume you already have (or can get your school's IT department to help you install):
+* A laptop or desktop running Windows, macOS, or Linux
+* A free GitHub account
+* About an hour of uninterrupted time for initial setup
+
+You **do not need any prior coding experience**—but you should be comfortable installing software and typing commands into a terminal window when instructed.
+:::
+
+## Why This Handbook Exists
 
 Writing a textbook is a massive undertaking, but choosing the right tooling can save you hundreds of hours of formatting headaches. 
 
-I use **VS Code on Windows** via the **Remote - WSL extension** to write books in **Markdown**, and compile it using **Quarto installation on Ubuntu WSL instance** for local building, and push the source files to **GitHub** for version control and use **GitHub Actions** to automatically build, render and host my books on **GitHub pages**. 
+I use **VS Code on Windows** via the **Remote - WSL extension** to write books in **Markdown**, and compile it using **Quarto installation on Ubuntu WSL instance** for local building, and push the source files to **GitHub** for version control and use **GitHub Actions** to automatically build, render and host my books on **GitHub pages**. However, you can work with **W
 
 This technical handbook is an engineering manual that starts with assuming the technical environment, moves linearly through execution and wraps up with the lomg term management and updates - with dedicated troubleshooting sections - as applicable.
 

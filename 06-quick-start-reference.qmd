@@ -1,0 +1,151 @@
+# Quick Start Reference Guide
+
+## Purpose
+Get a new Quarto book from idea → local WSL project → GitHub → published website.
+
+## Before You Start
+ - Decide the book title
+ - Choose repository name
+ - Decide public/private GitHub repository
+ - Decide where the book will live locally
+ - Confirm Git, WSL/Ubuntu, VS Code, and Quarto are available
+
+### Prerequisites
+ - WSL / Ubuntu installed
+ - Git installed
+ - Quarto installed
+ - VS Code + WSL extension
+ - GitHub account
+ - Git authentication configured
+
+## Create the GitHub Repository
+ - Create repository
+ - Copy repository URL
+ - Decide main branch
+ - Clone repository into WSL
+
+## Set Up the WSL Project
+```bash
+~/projects/
+    └── my-new-book/
+```
+Commands for:
+
+ - Creating/navigating directories
+```bash
+cd ~/projects
+```
+ - Cloning repository
+```bash
+git clone <github-repository-url>
+cd <repository-name>
+```
+ - Checking Git status
+```bash
+git status
+```
+ - Opening project in VS Code
+```bash
+code .
+```
+
+## Create the Quarto Book
+ - Initialize Quarto project
+ - Understand the generated files
+ - Configure _quarto.yml
+ - Establish chapter structure
+
+## Build the Book Locally
+ - Preview
+ ```bash
+ quarto preview
+ ```
+ - Render
+ ```bash
+ quarto render
+ ```
+ - Check navigation, links, images, code, references
+
+## Git Workflow
+A simple repeatable workflow:
+```{mermaid}
+flowchart TD
+
+    subgraph Row1[" "]
+        direction LR
+        pull[git pull] --> edit[edit] --> preview[quarto preview] --> Render[quarto render]
+    end
+
+    Render --> status[git status]
+
+    subgraph Row2[" "]
+        direction RL
+        status --> add[git add .] --> commit[git commit] --> push[git push]
+    end
+
+    style Row1 fill:none,stroke:none
+    style Row2 fill:none,stroke:none
+```
+## Publish with GitHub Pages
+ - Configure GitHub Pages
+ - Set up Quarto/GitHub Actions
+ - Push changes
+```bash
+quarto publish
+```
+ - Verify published site
+ - Understand what happens after each subsequent git push
+
+## Recommended Project Structure
+```bash
+    my-new-book/
+    ├── _quarto.yml
+    ├── index.qmd
+    ├── references.qmd
+    ├── chapters/
+    ├── images/
+    ├── code/
+    ├── data/
+    ├── references.bib
+    ├── README.md
+    └── .gitignore
+```
+## Troubleshooting Quick Reference
+| Problem                           | First thing to check                         |
+| --------------------------------- | -------------------------------------------- |
+| `quarto: command not found`       | Is Quarto installed in WSL?                  |
+| Git push fails                    | `git status`, remote URL, authentication     |
+| Book doesn't render               | Run `quarto render` and read the first error |
+| Image doesn't appear              | Check relative path/case                     |
+| GitHub Pages not updating         | Check GitHub Actions                         |
+| VS Code editing wrong environment | Confirm **WSL: Ubuntu**                      |
+| Changes aren't being pushed       | `git status`                                 |
+
+## The 5-Minute Cheat Sheet
+```bash
+# Clone
+git clone <repo-url>
+cd <repo>
+
+# Create Quarto book
+quarto create-project . --type book
+
+# Get into your project
+cd ~/projects/my-book
+
+# Preview
+quarto preview
+
+# Verify the complete book
+quarto render
+
+# Save changes
+git add .
+git commit -m "Update book"
+git push
+
+# Publish the book
+quarto publish
+```
+
+Quarto will guide you through the publishing destination the first time

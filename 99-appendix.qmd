@@ -104,3 +104,10 @@ In this the `-1` indicates the latest version of the pushed files. For the last 
 ## Copy that long token string immediately!
 Important: Copy that long token string immediately! Once you navigate away from this page, GitHub will never show it to you again.
 :::
+
+### D. Windows 11 OS with WSL for advanced users
+## Environment Architecture
+* **OS:** Windows 11 with WSL2 (Ubuntu 22.04 LTS or 24.04 LTS kernel). 
+  This is the closest to real Linux dev while keeping Windows usability. WSL (Windows Subsystem for Linux) is a feature in Windows that allows you to run a Linux distribution directly within Windows without needing a virtual machine or dual-boot setup. It provides a compatibility layer for executing Linux binaries natively on Windows.
+
+* **IDE:** VS Code connected via the Remote - WSL extension.
