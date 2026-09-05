@@ -68,17 +68,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./05-ongoing-management.html" rel="prev">
+<link href="./06-quick-start-reference.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-468a885c9ce40f75b16615e15828d1c3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8bba6fe1ce1e97fb66d568ab78d16264.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-840cabe789a607dcf7b08b422a709253.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -188,37 +188,43 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-prereqs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">System Prerequisites</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">System Prerequisites</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-project-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">First-Time Book Project Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">First-Time Book Project Setup</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-github-integration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Backup Book Content to GitHub</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Backup Book Content to GitHub</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-deployment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Publish Book using GitHub Pages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publish Book using GitHub Pages</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05-ongoing-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Long-Term Maintenance &amp; Ongoing Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Long-Term Maintenance &amp; Ongoing Management</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-quick-start-reference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quick Start Reference Guide</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -242,7 +248,9 @@ window.Quarto = {
   <li><a href="#the-upgrade-workflow" id="toc-the-upgrade-workflow" class="nav-link" data-scroll-target="#the-upgrade-workflow">The Upgrade Workflow</a></li>
   <li><a href="#sec-git-commands" id="toc-sec-git-commands" class="nav-link" data-scroll-target="#sec-git-commands">B. Common Git commands from WSL Terminal</a></li>
   <li><a href="#PAT-generation" id="toc-PAT-generation" class="nav-link" data-scroll-target="#PAT-generation">C. Generating Personal Access Token (PAT) on GitHub</a></li>
+  <li><a href="#d.-windows-11-os-with-wsl-for-advanced-users" id="toc-d.-windows-11-os-with-wsl-for-advanced-users" class="nav-link" data-scroll-target="#d.-windows-11-os-with-wsl-for-advanced-users">D. Windows 11 OS with WSL for advanced users</a></li>
   </ul></li>
+  <li><a href="#environment-architecture" id="toc-environment-architecture" class="nav-link" data-scroll-target="#environment-architecture">Environment Architecture</a></li>
   </ul>
 </nav>
     </div>
@@ -293,20 +301,20 @@ Note
 <section id="the-upgrade-workflow" class="level3">
 <h3 class="anchored" data-anchor-id="the-upgrade-workflow">The Upgrade Workflow</h3>
 <p>To pull down and apply the current stable production build, execute this sequence in your WSL terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Purge any stale, leftover installer packages from your environment</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> quarto-<span class="pp">*</span>-linux-amd64.deb</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Securely fetch the targeted release build from the official core repository</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="pp">[</span><span class="ss">https://github.com/quarto</span><span class="pp">-</span><span class="ss">dev/quarto</span><span class="pp">-</span><span class="ss">cli/releases/download/v1.9.38/quarto</span><span class="pp">-</span><span class="ss">1.9.38</span><span class="pp">-</span><span class="ss">linux</span><span class="pp">-</span><span class="ss">amd64.deb</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.38/quarto-1.9.38-linux-amd64.deb</span><span class="kw">)</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Apply the upgrade using Ubuntu's package deployment engine</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> quarto-1.9.38-linux-amd64.deb</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Confirm the underlying system kernel successfully registered the new version</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Remove downloaded .deb installer</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> quarto-<span class="pp">*</span>-linux-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># 1. Purge any stale, leftover installer packages from your environment</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">rm</span> <span class="at">-f</span> quarto-<span class="pp">*</span>-linux-amd64.deb</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># 2. Securely fetch the targeted release build from the official core repository</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">wget</span> <span class="pp">[</span><span class="ss">https://github.com/quarto</span><span class="pp">-</span><span class="ss">dev/quarto</span><span class="pp">-</span><span class="ss">cli/releases/download/v1.9.38/quarto</span><span class="pp">-</span><span class="ss">1.9.38</span><span class="pp">-</span><span class="ss">linux</span><span class="pp">-</span><span class="ss">amd64.deb</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.38/quarto-1.9.38-linux-amd64.deb</span><span class="kw">)</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># 3. Apply the upgrade using Ubuntu's package deployment engine</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> quarto-1.9.38-linux-amd64.deb</span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># 4. Confirm the underlying system kernel successfully registered the new version</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="ex">quarto</span> <span class="at">--version</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># 5. Remove downloaded .deb installer</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="fu">rm</span> <span class="at">-f</span> quarto-<span class="pp">*</span>-linux-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -320,20 +328,20 @@ Note
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Based on which folder you downloaded the installer, you may have ‘inadvertantly’ downloaded it in one of the folders that is included in <code>git add .</code>. If that happens this large <code>.deb</code> file gets included in the list to be committed to git. The installer file is a large file and since <code>git push</code> has a 100MB limit, you will face commit and push issues. This is a classic Git trap! Git captured that massive installer file and tried to track it. Even if you delete the file now using your standard file manager, Git keeps it locked inside its historical staging memory. We can fix this instantly by telling Git to forget the installer ever existed.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rm <span class="at">--cached</span> quarto-1.9.38-linux-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">git</span> rm <span class="at">--cached</span> quarto-1.9.38-linux-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Also remember to add <code>*.deb</code> to the <code>.gitignore</code> file, so that such installer files are not picked by <code>git add .</code> Then attempt to add, commit and push again.</p>
 <p>At this stage if you still face push error, while .deb is not in the latest commit, it is still trapped inside your local Git history from the previous commit attempt. When you run git push, Git tries to upload the entire historical chain—including that heavy, blocked commit. Easy and cleanest way at this stage would be to simply reset your Git history back to its pristine state before that file got tracked, and then commit your clean files.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Reset your git memory</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--mixed</span> origin/main</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Re-stage your clean files</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Create a fresh clean commit and push to cloud</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Re-commit textbook files excluding installer assets"</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.  </span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># 1. Reset your git memory</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">git</span> reset <span class="at">--mixed</span> origin/main</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># 2. Re-stage your clean files</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">git</span> add .</span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># 3. Create a fresh clean commit and push to cloud</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Re-commit textbook files excluding installer assets"</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co"># 4.  </span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -344,23 +352,23 @@ Note
 <section id="connection-commands" class="level4">
 <h4 class="anchored" data-anchor-id="connection-commands">Connection Commands</h4>
 <p>Execute these tracking operations inside your root project folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"initial textbook setup"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># COPY AND PASTE THE EXACT REMOTE URL FROM YOUR GITHUB PAGE</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin <span class="pp">[</span><span class="ss">https://github.com/YOUR</span><span class="pp">-</span><span class="ss">USERNAME/my</span><span class="pp">-</span><span class="ss">textbook.git</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://github.com/YOUR-USERNAME/my-textbook.git</span><span class="kw">)</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">git</span> init</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">git</span> add .</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"initial textbook setup"</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co"># COPY AND PASTE THE EXACT REMOTE URL FROM YOUR GITHUB PAGE</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">git</span> remote add origin <span class="pp">[</span><span class="ss">https://github.com/YOUR</span><span class="pp">-</span><span class="ss">USERNAME/my</span><span class="pp">-</span><span class="ss">textbook.git</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://github.com/YOUR-USERNAME/my-textbook.git</span><span class="kw">)</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>With that your source files are safely backed up on GitHub</p>
 <p>On an ongoing basis to make sure your core markdown files are safely saved to your main GitHub repository cloud, run your standard git backup command every now and then:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"added new content"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">git</span> add .</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"added new content"</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="other-useful-troubleshooting-commands" class="level4">
 <h4 class="anchored" data-anchor-id="other-useful-troubleshooting-commands">Other useful troubleshooting commands</h4>
 <p>To verify the last push into git</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">-1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">git</span> log <span class="at">-1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In this the <code>-1</code> indicates the latest version of the pushed files. For the last two commits use -2 and so on.</p>
 </section>
 </section>
@@ -392,9 +400,19 @@ Note
 </div>
 </div>
 </div>
-
-
 </section>
+<section id="d.-windows-11-os-with-wsl-for-advanced-users" class="level3">
+<h3 class="anchored" data-anchor-id="d.-windows-11-os-with-wsl-for-advanced-users">D. Windows 11 OS with WSL for advanced users</h3>
+</section>
+</section>
+<section id="environment-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="environment-architecture">Environment Architecture</h2>
+<ul>
+<li><p><strong>OS:</strong> Windows 11 with WSL2 (Ubuntu 22.04 LTS or 24.04 LTS kernel). This is the closest to real Linux dev while keeping Windows usability. WSL (Windows Subsystem for Linux) is a feature in Windows that allows you to run a Linux distribution directly within Windows without needing a virtual machine or dual-boot setup. It provides a compatibility layer for executing Linux binaries natively on Windows.</p></li>
+<li><p><strong>IDE:</strong> VS Code connected via the Remote - WSL extension.</p></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -800,8 +818,8 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./05-ongoing-management.html" class="pagination-link" aria-label="Long-Term Maintenance &amp; Ongoing Management">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Long-Term Maintenance &amp; Ongoing Management</span></span>
+      <a href="./06-quick-start-reference.html" class="pagination-link" aria-label="Quick Start Reference Guide">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quick Start Reference Guide</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

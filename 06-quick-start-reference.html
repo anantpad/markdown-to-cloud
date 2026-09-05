@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>keywords – Living Textbooks</title>
+<title>6&nbsp; Quick Start Reference Guide – Living Textbooks</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,17 +68,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./99-appendix.html" rel="prev">
+<link href="./99-appendix.html" rel="next">
+<link href="./05-ongoing-management.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-468a885c9ce40f75b16615e15828d1c3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8bba6fe1ce1e97fb66d568ab78d16264.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-840cabe789a607dcf7b08b422a709253.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,6 +107,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -84,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./keywords.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">keywords.html</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-quick-start-reference.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quick Start Reference Guide</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -124,37 +163,43 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-prereqs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">System Prerequisites</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">System Prerequisites</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-project-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">First-Time Book Project Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">First-Time Book Project Setup</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-github-integration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Backup Book Content to GitHub</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Backup Book Content to GitHub</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-deployment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Publish Book using GitHub Pages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publish Book using GitHub Pages</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05-ongoing-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Long-Term Maintenance &amp; Ongoing Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Long-Term Maintenance &amp; Ongoing Management</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-quick-start-reference.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quick Start Reference Guide</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -163,28 +208,267 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Appendix: Supplemental Operations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./keywords.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">keywords.html</span></span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose"><span class="header-section-number">6.1</span> Purpose</a></li>
+  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link" data-scroll-target="#before-you-start"><span class="header-section-number">6.2</span> Before You Start</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites"><span class="header-section-number">6.2.1</span> Prerequisites</a></li>
+  </ul></li>
+  <li><a href="#create-the-github-repository" id="toc-create-the-github-repository" class="nav-link" data-scroll-target="#create-the-github-repository"><span class="header-section-number">6.3</span> Create the GitHub Repository</a></li>
+  <li><a href="#set-up-the-wsl-project" id="toc-set-up-the-wsl-project" class="nav-link" data-scroll-target="#set-up-the-wsl-project"><span class="header-section-number">6.4</span> Set Up the WSL Project</a></li>
+  <li><a href="#create-the-quarto-book" id="toc-create-the-quarto-book" class="nav-link" data-scroll-target="#create-the-quarto-book"><span class="header-section-number">6.5</span> Create the Quarto Book</a></li>
+  <li><a href="#build-the-book-locally" id="toc-build-the-book-locally" class="nav-link" data-scroll-target="#build-the-book-locally"><span class="header-section-number">6.6</span> Build the Book Locally</a></li>
+  <li><a href="#git-workflow" id="toc-git-workflow" class="nav-link" data-scroll-target="#git-workflow"><span class="header-section-number">6.7</span> Git Workflow</a></li>
+  <li><a href="#publish-with-github-pages" id="toc-publish-with-github-pages" class="nav-link" data-scroll-target="#publish-with-github-pages"><span class="header-section-number">6.8</span> Publish with GitHub Pages</a></li>
+  <li><a href="#recommended-project-structure" id="toc-recommended-project-structure" class="nav-link" data-scroll-target="#recommended-project-structure"><span class="header-section-number">6.9</span> Recommended Project Structure</a></li>
+  <li><a href="#troubleshooting-quick-reference" id="toc-troubleshooting-quick-reference" class="nav-link" data-scroll-target="#troubleshooting-quick-reference"><span class="header-section-number">6.10</span> Troubleshooting Quick Reference</a></li>
+  <li><a href="#the-5-minute-cheat-sheet" id="toc-the-5-minute-cheat-sheet" class="nav-link" data-scroll-target="#the-5-minute-cheat-sheet"><span class="header-section-number">6.11</span> The 5-Minute Cheat Sheet</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quick Start Reference Guide</span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="purpose" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">6.1</span> Purpose</h2>
+<p>Get a new Quarto book from idea → local WSL project → GitHub → published website.</p>
+</section>
+<section id="before-you-start" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="before-you-start"><span class="header-section-number">6.2</span> Before You Start</h2>
+<ul>
+<li>Decide the book title</li>
+<li>Choose repository name</li>
+<li>Decide public/private GitHub repository</li>
+<li>Decide where the book will live locally</li>
+<li>Confirm Git, WSL/Ubuntu, VS Code, and Quarto are available</li>
+</ul>
+<section id="prerequisites" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">6.2.1</span> Prerequisites</h3>
+<ul>
+<li>WSL / Ubuntu installed</li>
+<li>Git installed</li>
+<li>Quarto installed</li>
+<li>VS Code + WSL extension</li>
+<li>GitHub account</li>
+<li>Git authentication configured</li>
+</ul>
+</section>
+</section>
+<section id="create-the-github-repository" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="create-the-github-repository"><span class="header-section-number">6.3</span> Create the GitHub Repository</h2>
+<ul>
+<li>Create repository</li>
+<li>Copy repository URL</li>
+<li>Decide main branch</li>
+<li>Clone repository into WSL</li>
+</ul>
+</section>
+<section id="set-up-the-wsl-project" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="set-up-the-wsl-project"><span class="header-section-number">6.4</span> Set Up the WSL Project</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">~/projects/</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="ex">└──</span> my-new-book/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Commands for:</p>
+<ul>
+<li>Creating/navigating directories</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">cd</span> ~/projects</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Cloning repository</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>github-repository-url<span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="bu">cd</span> <span class="op">&lt;</span>repository-name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Checking Git status</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">git</span> status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Opening project in VS Code</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">code</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="create-the-quarto-book" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="create-the-quarto-book"><span class="header-section-number">6.5</span> Create the Quarto Book</h2>
+<ul>
+<li>Initialize Quarto project</li>
+<li>Understand the generated files</li>
+<li>Configure _quarto.yml</li>
+<li>Establish chapter structure</li>
+</ul>
+</section>
+<section id="build-the-book-locally" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="build-the-book-locally"><span class="header-section-number">6.6</span> Build the Book Locally</h2>
+<ul>
+<li>Preview</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Render</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Check navigation, links, images, code, references</li>
+</ul>
+</section>
+<section id="git-workflow" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="git-workflow"><span class="header-section-number">6.7</span> Git Workflow</h2>
+<p>A simple repeatable workflow:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+
+    subgraph Row1[" "]
+        direction LR
+        pull[git pull] --&gt; edit[edit] --&gt; preview[quarto preview] --&gt; Render[quarto render]
+    end
+
+    Render --&gt; status[git status]
+
+    subgraph Row2[" "]
+        direction RL
+        status --&gt; add[git add .] --&gt; commit[git commit] --&gt; push[git push]
+    end
+
+    style Row1 fill:none,stroke:none
+    style Row2 fill:none,stroke:none
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="publish-with-github-pages" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="publish-with-github-pages"><span class="header-section-number">6.8</span> Publish with GitHub Pages</h2>
+<ul>
+<li>Configure GitHub Pages</li>
+<li>Set up Quarto/GitHub Actions</li>
+<li>Push changes</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">quarto</span> publish</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Verify published site</li>
+<li>Understand what happens after each subsequent git push</li>
+</ul>
+</section>
+<section id="recommended-project-structure" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="recommended-project-structure"><span class="header-section-number">6.9</span> Recommended Project Structure</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a>    <span class="ex">my-new-book/</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>    <span class="ex">├──</span> _quarto.yml</span>
+<span id="cb9-3"><a href="#cb9-3"></a>    <span class="ex">├──</span> index.qmd</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="ex">├──</span> references.qmd</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    <span class="ex">├──</span> chapters/</span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="ex">├──</span> images/</span>
+<span id="cb9-7"><a href="#cb9-7"></a>    <span class="ex">├──</span> code/</span>
+<span id="cb9-8"><a href="#cb9-8"></a>    <span class="ex">├──</span> data/</span>
+<span id="cb9-9"><a href="#cb9-9"></a>    <span class="ex">├──</span> references.bib</span>
+<span id="cb9-10"><a href="#cb9-10"></a>    <span class="ex">├──</span> README.md</span>
+<span id="cb9-11"><a href="#cb9-11"></a>    <span class="ex">└──</span> .gitignore</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="troubleshooting-quick-reference" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="troubleshooting-quick-reference"><span class="header-section-number">6.10</span> Troubleshooting Quick Reference</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Problem</th>
+<th>First thing to check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>quarto: command not found</code></td>
+<td>Is Quarto installed in WSL?</td>
+</tr>
+<tr class="even">
+<td>Git push fails</td>
+<td><code>git status</code>, remote URL, authentication</td>
+</tr>
+<tr class="odd">
+<td>Book doesn’t render</td>
+<td>Run <code>quarto render</code> and read the first error</td>
+</tr>
+<tr class="even">
+<td>Image doesn’t appear</td>
+<td>Check relative path/case</td>
+</tr>
+<tr class="odd">
+<td>GitHub Pages not updating</td>
+<td>Check GitHub Actions</td>
+</tr>
+<tr class="even">
+<td>VS Code editing wrong environment</td>
+<td>Confirm <strong>WSL: Ubuntu</strong></td>
+</tr>
+<tr class="odd">
+<td>Changes aren’t being pushed</td>
+<td><code>git status</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-5-minute-cheat-sheet" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="the-5-minute-cheat-sheet"><span class="header-section-number">6.11</span> The 5-Minute Cheat Sheet</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Clone</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">git</span> clone <span class="op">&lt;</span>repo-url<span class="op">&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="bu">cd</span> <span class="op">&lt;</span>repo<span class="op">&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="co"># Create Quarto book</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="ex">quarto</span> create-project . <span class="at">--type</span> book</span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="co"># Get into your project</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="bu">cd</span> ~/projects/my-book</span>
+<span id="cb10-10"><a href="#cb10-10"></a></span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="co"># Preview</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a><span class="ex">quarto</span> preview</span>
+<span id="cb10-13"><a href="#cb10-13"></a></span>
+<span id="cb10-14"><a href="#cb10-14"></a><span class="co"># Verify the complete book</span></span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="ex">quarto</span> render</span>
+<span id="cb10-16"><a href="#cb10-16"></a></span>
+<span id="cb10-17"><a href="#cb10-17"></a><span class="co"># Save changes</span></span>
+<span id="cb10-18"><a href="#cb10-18"></a><span class="fu">git</span> add .</span>
+<span id="cb10-19"><a href="#cb10-19"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Update book"</span></span>
+<span id="cb10-20"><a href="#cb10-20"></a><span class="fu">git</span> push</span>
+<span id="cb10-21"><a href="#cb10-21"></a></span>
+<span id="cb10-22"><a href="#cb10-22"></a><span class="co"># Publish the book</span></span>
+<span id="cb10-23"><a href="#cb10-23"></a><span class="ex">quarto</span> publish</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Quarto will guide you through the publishing destination the first time</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -589,11 +873,14 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./99-appendix.html" class="pagination-link" aria-label="Appendix: Supplemental Operations">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Appendix: Supplemental Operations</span>
+      <a href="./05-ongoing-management.html" class="pagination-link" aria-label="Long-Term Maintenance &amp; Ongoing Management">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Long-Term Maintenance &amp; Ongoing Management</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./99-appendix.html" class="pagination-link" aria-label="Appendix: Supplemental Operations">
+        <span class="nav-page-text">Appendix: Supplemental Operations</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
